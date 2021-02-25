@@ -1,4 +1,6 @@
 Webpack:
+// matterjs
+// swiper nav
 
 //copy compiled styles into craft folder
 //loader for scss & fonts & images

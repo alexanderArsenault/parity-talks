@@ -18,12 +18,12 @@ module.exports = {
     main: './' + src_Path + '/index.js'
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[chunkhash].js'
+    path: path.resolve(__dirname, prod_Path),
+    filename: '[name].bundle.js',
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: prod_Path,
     port: 9000
   },
   module: {
@@ -75,7 +75,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
