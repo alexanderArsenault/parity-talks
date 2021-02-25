@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 7f299330-24e5-4049-bd9c-dc4bf12cc348
+handle: contactHeader
+instructions: ''
+name: 'Contact Header'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

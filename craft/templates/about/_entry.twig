@@ -1,0 +1,34 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+{% set page = entry.aboutContent %}
+<section id="about">
+	<div class="wrapper">
+		<a class="back-link" href="/"> <i class="fa-lg fa fa-caret-left"></i>Zurück</a>
+    {% for entry in entry.aboutContent %}
+      {% if entry.type == 'textWithImage' %}
+        <div class="content-split content-container">
+          <div class="content-text">
+            <h3>{{ entry.sectionTitle }}</h3>
+            {{entry.text}}
+          </div>
+          <div class="content-image">
+            <img src="{{entry.image.one().getUrl()}}" alt="">
+          </div>
+        </div>
+      {% endif %}
+
+      {% if entry.type == 'textBlock' %}
+        <div class="content-container">
+          <div class="content-text">
+            <h3>{{ entry.sectionTitle }}</h3>
+            {{entry.text}}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+	</div>
+</section>
+
+{% endblock %}

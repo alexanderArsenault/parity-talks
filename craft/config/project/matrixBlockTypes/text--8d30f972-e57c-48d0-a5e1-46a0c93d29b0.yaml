@@ -1,0 +1,105 @@
+field: f555c474-9ab1-495c-98c1-a796fee1d571
+fieldLayouts:
+  d7bf4e00-4193-48f8-91fd-577fa96ee79c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b68e1e84-437f-4024-ac2e-fe907011e270
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 04795299-a632-4eb4-ac36-d2faf73e2539
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 7e1d88a7-3593-4493-b8e1-89e3c08e2426
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  04795299-a632-4eb4-ac36-d2faf73e2539:
+    contentColumnType: text
+    fieldGroup: null
+    handle: responseTitle
+    instructions: ''
+    name: 'Response Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7e1d88a7-3593-4493-b8e1-89e3c08e2426:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  b68e1e84-437f-4024-ac2e-fe907011e270:
+    contentColumnType: text
+    fieldGroup: null
+    handle: responseName
+    instructions: ''
+    name: 'Response Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: text
+name: 'Text Response'
+sortOrder: 2

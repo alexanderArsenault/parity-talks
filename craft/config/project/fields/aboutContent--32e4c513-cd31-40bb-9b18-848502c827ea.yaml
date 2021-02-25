@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 0cc6452d-9ff2-43bc-941c-ada31255d2b0
+handle: aboutContent
+instructions: 'This is where content is added to the about page'
+name: 'About Content'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_aboutcontent}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

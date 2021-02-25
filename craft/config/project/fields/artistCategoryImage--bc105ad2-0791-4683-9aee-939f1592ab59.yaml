@@ -1,0 +1,30 @@
+contentColumnType: string
+fieldGroup: e92e9d90-0340-433b-b4f0-7de8bca2bafc
+handle: artistCategoryImage
+instructions: ''
+name: 'Artist Category Image'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:091e426a-d9d6-413e-8543-51253f999bbd'
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: ''
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:091e426a-d9d6-413e-8543-51253f999bbd'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

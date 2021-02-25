@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 51c9fc81-4cb7-4353-bcb7-d661c8fcff66
+handle: homeButtonText
+instructions: ''
+name: 'Home Button Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

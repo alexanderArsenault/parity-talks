@@ -1,0 +1,135 @@
+//Display Links With Custom, Animated Underline. Should Be Applied To Inline `a`-Elements.
+
+
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+$mod_1: 1.2; // mobile
+$mod_2: 1.5; // desktop
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+  
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+        font-size: $min-font-size;
+        @media screen and (min-width: $min-vw) {
+            font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        }
+        @media screen and (min-width: $max-vw) {
+            font-size: $max-font-size;
+        }
+        }
+    }
+}
+
+
+h1 {  
+    font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h2 {  
+    font-size: $mod_1*$mod_1*$mod_1 *1rem; 
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h3 { 
+    font-size: $mod_1*$mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
+
+h4 {
+    font-weight: normal;
+}
+
+p, li {
+    font-size: $mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1 *$min_font, $mod_2*$min_font);
+}
+
+$border-width: 1px;
+@mixin animated-links($color) {
+    position: relative;
+    &:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: $border-width;
+        content: '';
+        background-color: $color;
+        transition: all .3s ease-in-out 0s;
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    &:hover:before {
+        //transform: scaleX(.75);
+        animation-name: hoverSlide;
+        animation-duration: .5s;
+    }
+}
+
+
+
+@mixin animated-hover($color) {
+    position: relative;
+    &:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: $border-width;
+        content: '';
+        background-color: $color;
+        transition: all .3s ease-in-out 0s;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    &:hover:before {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes hoverSlide {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@mixin blackbox(){
+    background-color: $black;
+    color: $white;
+    padding: 0.25rem;
+}
+
+@mixin for-phone-only {
+    @media (max-width: 750px) { 
+        @content;
+     }
+}
+
+@mixin for-tablet-down {
+    @media (max-width: 1150px) { 
+        @content;
+     }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1150px) { 
+        @content;
+     }
+}

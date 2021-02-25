@@ -1,0 +1,96 @@
+field: f555c474-9ab1-495c-98c1-a796fee1d571
+fieldLayouts:
+  b081fc79-2ab9-43df-84f2-9b3565a3d848:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 90938039-4325-4962-8645-f27f1fb4fd6d
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: d2aee074-07e3-4b7b-970a-0e3e29afeee7
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: f88d7acc-3547-4315-88c1-af4aba58d7a8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  90938039-4325-4962-8645-f27f1fb4fd6d:
+    contentColumnType: text
+    fieldGroup: null
+    handle: responseName
+    instructions: ''
+    name: 'Response Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d2aee074-07e3-4b7b-970a-0e3e29afeee7:
+    contentColumnType: text
+    fieldGroup: null
+    handle: responseTitle
+    instructions: ''
+    name: 'Response title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f88d7acc-3547-4315-88c1-af4aba58d7a8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkToAudio
+    instructions: ''
+    name: 'Link to Audio'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '6'
+      multiline: '1'
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: audio
+name: 'Audio Response'
+sortOrder: 4

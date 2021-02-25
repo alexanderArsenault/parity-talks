@@ -1,0 +1,15 @@
+contentColumnType: datetime
+fieldGroup: 2d3b5721-b65f-462e-949e-4fad297bfbd1
+handle: entryDate
+instructions: 'This is the date of each entry'
+name: 'Entry Date'
+searchable: false
+settings:
+  max: null
+  min: null
+  minuteIncrement: '30'
+  showDate: true
+  showTime: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

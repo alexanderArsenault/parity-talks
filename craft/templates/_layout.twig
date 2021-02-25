@@ -1,0 +1,84 @@
+<html lang="{{ craft.app.language }}">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8"/>
+    <title>{{ siteName }}</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+    <link href="/styles.css" rel="stylesheet">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+		<link rel="manifest" href="assets/icons/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  </head>
+  <body class="ltr">
+	<header>
+		<div class="wrapper">
+			<nav id="navigation">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/program">Kunst+Orte</a></li>
+					<li><a href="/about">Über uns</a></li>
+					<li><a href="/logbook">Logbuch</a></li>
+					<li><a href="/afterparty">AfterParty</a></li>
+					<li class="navigation-links">
+						<a href="https://www.facebook.com/seekult"><i class="fab fa-facebook"></i></a>
+						<a href="https://www.instagram.com/seekultfestival/"><i class="fab fa-instagram"></i></a>
+					</li>
+				</ul>
+			</nav>
+			<button class="hamburger hamburger--collapse" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+		</div>
+	</header>
+    <div class="container mx-auto px-4">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+	<footer>
+		<div class="wrapper">
+			<div class="footer-content">
+				<div class="footer-contact">
+					<h4 class="bold">{{ footerContent.contactHeader }}</h4>
+					{{ footerContent.contactText }}
+				</div>
+				<div class="footer-privacy">
+					<h4 class="bold">{{ footerContent.privacyTitle }}</h4>
+					{{ footerContent.privacyText }}
+				</div>
+				<div class="footer-sponsors">
+				 <p>Ein herzlicher Dank gilt auch der Stadt Friedrichshafen, dem Stadtmarketing, dem Kulturbüro, dem Zeppelin Museum sowie dem Graf-Zeppelin-Haus für die Unterstützung in der Ermöglichung dieses Projekts.</p>
+					<div class="sponsor-gallery">
+						<div class="sponsors-primary">
+							<div class="img-container"><img src="/assets/img/theme/sponsors/zug_w.png" alt=""/></div>
+							<div class="img-container"><img src="/assets/img/theme/sponsors/sws_w.png" alt=""/></div>
+						</div>
+						<div class="sponsors-secondary">
+							<div class="img-container"><img src="/assets/img/theme/sponsors/OEW_w.png" alt=""/></div>
+							<div class="img-container"><img src="/assets/img/theme/sponsors/stadtwerk_w.png" alt=""/></div>
+							<div class="img-container"><img src="/assets/img/theme/sponsors/gessler_w.png" alt=""/></div>
+							<div class="img-container"><img src="/assets/img/theme/sponsors/hdk_w.png" alt=""/></div>
+						</div>
+						<div class="sponsors-tertiary">
+							<div class="img-container"><img src="/assets/img/theme/sponsors/rathaus_w.png" alt=""/></div>
+							<div class="img-container"><img src="/assets/img/theme/sponsors/blumenhaus_w.png" alt=""/></div>
+							<div class="img-container smaller-logo"><img src="/assets/img/theme/sponsors/seezeit_w.png" alt=""/></div>
+							<div class="img-container smaller-logo"><img src="/assets/img/theme/sponsors/mechatzer_w.png" alt=""/></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+  </body>
+		<script src="/assets/js/main.js"></script>
+
+</html>

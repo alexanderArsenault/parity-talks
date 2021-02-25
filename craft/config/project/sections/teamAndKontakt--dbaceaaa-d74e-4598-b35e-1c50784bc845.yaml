@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: teamAndKontakt
+name: 'Team and Kontakt'
+propagationMethod: all
+siteSettings:
+  6e717b50-587c-4af5-b487-e10a9fcb59ef:
+    enabledByDefault: true
+    hasUrls: true
+    template: about/_entry
+    uriFormat: kontakt
+type: single

@@ -1,0 +1,19 @@
+Get correct QEU logo and add it
+
+Finish Craft:
+	-logbook	
+		-audio
+		-video
+	-general	
+		-images loaded everywhere
+		-js interactivity
+		-links correct and working
+		-all text to field changes
+-change urls	
+-translations
+footer images dont show on artist page
+
+Rebuild Site in PHP7.3
+Upload to hosting Provider
+Get DB live
+

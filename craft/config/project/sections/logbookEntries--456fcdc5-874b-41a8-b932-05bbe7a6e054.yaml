@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: logbookEntries
+name: 'Logbook Entries'
+propagationMethod: all
+siteSettings:
+  6e717b50-587c-4af5-b487-e10a9fcb59ef:
+    enabledByDefault: true
+    hasUrls: true
+    template: null
+    uriFormat: 'logbook-entries/{slug}'
+structure:
+  maxLevels: 2
+  uid: 2c5c21f9-9b3f-4357-ba82-6636c685b645
+type: structure

@@ -1,0 +1,14 @@
+{% extends "_layout" %}
+
+{% block content %}
+<section>
+	<div class="wrapper">
+		<a class="back-link" href="/"> <i class="fa-lg fa fa-caret-left"></i>Zurück</a>
+			<h3> {{ entry.title }}</h3>
+			<div class="content-container">
+			{{ entry.pageContent }}
+			</div>
+		</div>
+</section>
+
+{% endblock %}

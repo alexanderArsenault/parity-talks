@@ -1,0 +1,68 @@
+{% extends "_layout" %}
+
+{# https://craftcms.stackexchange.com/questions/1933/how-do-i-create-a-list-of-categories-and-display-the-entries-relating-to-each-of #}
+{# That link shows how to show only category related items #}
+{% block content %}
+
+<section id="artists">
+	<div class="wrapper">
+		<h3 class="uppercase">{{entry.artistSectionTitle}}</h3>
+		<div class="artist-gallery">
+      {% set categories = craft.entries.section('artists').find() %}
+
+        {% for entry in categories %}
+        {% set image = entry.artistImage.one().getUrl() ?? null %}
+        {% set url = entry.slug %}
+
+          <a href="/program/{{url}}" class="artist">
+            <article>
+              <div class="artist-image" style="background-image: url('{{ image }}');"></div>
+              <p class="artist-title">{{entry.title}}</p>
+            </article>
+          </a>
+        {% endfor %}
+		</div>
+	</div>
+</section>
+
+<section id="events">
+	<div class="wrapper">
+		<h3 class="uppercase">{{entry.title}}</h3>
+		<div class="interventions-container">
+			<div class="map-container" style="background-image: url('assets/img/theme/Map.png')"></div>
+
+			<div class="events-container">
+				<div class="event-container adenauerplatz">
+					<div class="event-image" style="background-image: url('{{craft.categories.slug('adenauerplatz').one().artistCategoryImage.one().getUrl()}}');"></div>
+					<div class="event-content">
+						<div class="event-type ">Adenauerplatz</div>
+							{% set adenauerplatzEntries = craft.entries.relatedTo(craft.categories.slug('adenauerplatz')).all() %}
+							<p>{% for entry in adenauerplatzEntries %}
+								<a href="{{entry.url}}"> {{entry.title}}</a>
+							{% endfor %}<p>
+					</div>
+				</div>
+				<div class="event-container buchhornplatz">
+					<div class="event-image" style="background-image: url('{{craft.categories.slug('buchhornplatz').one().artistCategoryImage.one().getUrl()}}');"></div>
+					<div class="event-content">
+						<div class="event-type">Buchhornplatz</div>
+							{% set buchhornplatzEntries = craft.entries.relatedTo(craft.categories.slug('buchhornplatz')).all() %}
+							<p>{% for entry in buchhornplatzEntries %}
+								<a href="{{entry.url}}"> {{entry.title}}</a>
+							{% endfor %}<p>
+					</div>
+				</div>
+				<div class="event-container moleturm">
+					<div class="event-image" style="background-image: url('{{craft.categories.slug('moleturm').one().artistCategoryImage.one().getUrl()}}');"></div>
+					<div class="event-content">
+						<div class="event-type">Moleturm</div>
+							{% set moleturmEntries = craft.entries.relatedTo(craft.categories.slug('moleturm')).all() %}
+							<p>{% for entry in moleturmEntries %}
+								<a href="{{entry.url}}"> {{entry.title}}</a>
+							{% endfor %}<p>
+					</div>
+				</div>
+			</div>
+	</div>
+</section>
+{% endblock %}
