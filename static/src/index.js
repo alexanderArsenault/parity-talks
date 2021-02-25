@@ -3,6 +3,8 @@ import './assets/scss/style.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
 
 
+// Menyu thingss
+
 let toggleActive = function(event){
   event.target.parentNode.classList.toggle('active');
 }

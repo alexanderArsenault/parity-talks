@@ -3,5 +3,7 @@ jQuery(document).ready(function($) {
 });
 
 $(window).resize(function() {
+
+  alert('resize works')
   //Resize Stuff
 });

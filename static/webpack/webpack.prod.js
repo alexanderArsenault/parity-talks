@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -74,48 +75,35 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '../../craft/web/styles.css'
+    }),    new HtmlWebpackPlugin({
+      inject: false,
+      hash: false,
+      template: './' + src_Path,
+      filename: 'talks.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './' + src_Path + '/index.html',
-      filename: 'index.html'
+      template: './' + src_Path + '/season.html',
+      filename: 'season.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './' + src_Path + '/about.html',
-      filename: 'about.html'
+      template: './' + src_Path + '/talks.html',
+      filename: 'talks.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './' + src_Path + '/program.html',
-      filename: 'program.html'
+      template: './' + src_Path + '/projects.html',
+      filename: 'projects.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './' + src_Path + '/logbook.html',
-      filename: 'logbook.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: false,
-      template: './' + src_Path + '/stream.html',
-      filename: 'stream.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: false,
-      template: './' + src_Path + '/artist.html',
-      filename: 'artist.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: false,
-      template: './' + src_Path + '/impressum.html',
-      filename: 'impressum.html'
+      template: './' + src_Path + '/talks.html',
+      filename: 'talks.html'
     }),
     new WebpackMd5Hash()
   ]

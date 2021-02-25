@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -70,6 +71,13 @@ module.exports = {
     //     { from: src_Path + '/assets/css', to: '../../craft/web/' },
     //   ],
     // }),
+    new HtmlWebpackPlugin(),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './partials/navigation.html'),
+        location: 'header'
+      },
+    ]),
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
@@ -77,44 +85,31 @@ module.exports = {
       inject: false,
       hash: false,
       template: './' + src_Path + '/index.html',
-      filename: 'index.html'
+      filename: 'talks.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './' + src_Path + '/about.html',
-      filename: 'about.html'
+      template: './' + src_Path + '/season.html',
+      filename: 'season.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './' + src_Path + '/program.html',
-      filename: 'program.html'
+      template: './' + src_Path + '/archive.html',
+      filename: 'archive.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './' + src_Path + '/logbook.html',
-      filename: 'logbook.html'
+      template: './' + src_Path + '/projects.html',
+      filename: 'projects.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
-      template: './' + src_Path + '/stream.html',
-      filename: 'stream.html'
+      template: './' + src_Path + '/group.html',
+      filename: 'group.html'
     }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: false,
-      template: './' + src_Path + '/artist.html',
-      filename: 'artist.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: false,
-      template: './' + src_Path + '/impressum.html',
-      filename: 'impressum.html'
-    }),
-
   ]
 };
