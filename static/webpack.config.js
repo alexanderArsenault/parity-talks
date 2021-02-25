@@ -1,6 +1,8 @@
-const env = process.env.NODE_ENV
+const environment = process.env.NODE_ENV
 
-module.exports = env => {
-  console.log(`🛠️  running ${env} Mode using ./webpack/webpack.${env}.js 🛠️`);
-  return require(`./webpack/webpack.${env}.js`);
+module.exports = environment => {
+  env = !!environment.prod ? 'production' : 'development'
+  
+  console.log(`🛠️  running ${env} Mode using ./webpack/webpack.${env}.config.js 🛠️`);
+  return require(`./webpack/webpack.${env}.config.js`);
 };
