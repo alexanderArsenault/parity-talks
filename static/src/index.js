@@ -7,15 +7,33 @@ let accordions = Array.from(document.getElementsByClassName("header-three-accord
 
 accordions.forEach( item => {
 	item.addEventListener('click', function() {
+    let show = function(element){
+      element.classList.add("active")
+      let panel = element.nextElementSibling;
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+    let hide = function(element){
+      element.classList.remove("active")
+      let panel = element.nextElementSibling;
+      panel.style.maxHeight = null;
+    }
+    let toggle = function(element){
+      let panel = element.nextElementSibling;
+      if (panel.style.maxHeight) {
+        hide(element);
+      } else {
+        show(element);
+      }
+    }
+
     accordions.forEach(item => {
       if (item !== this){
-        item.classList.remove('active')
+        hide(item)
       }
     });
-    this.classList.toggle("active");
+    toggle(this);
   });
 })
-
 
 // import './assets/js/vendor/pathseg.js';
 // import 'poly-decomp';

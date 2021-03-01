@@ -79,11 +79,5 @@ nav ul {
 .panel {
 	max-height: 0;
   overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.header-three-accordion.active {
-	& + .panel {
-		max-height: 10000000px;
-	}
+  transition: all 0.2s ease-out;
 }
