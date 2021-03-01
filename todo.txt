@@ -1,6 +1,8 @@
 Webpack:
 // matterjs
 // swiper nav
+// add favicon
+//resizing
 
 //copy compiled styles into craft folder
 //loader for scss & fonts & images

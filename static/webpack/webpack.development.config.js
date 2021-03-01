@@ -86,28 +86,28 @@ module.exports = {
       inject: false,
       hash: false,
       chunks: ['index'],
-      template: './' + src_Path + '/season.html',
+      template: './' + src_Path + '/views/season.html',
       filename: 'season.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
       chunks: ['index'],
-      template: './' + src_Path + '/archive.html',
+      template: './' + src_Path + '/views/archive.html',
       filename: 'archive.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
       chunks: ['index'],
-      template: './' + src_Path + '/projects.html',
+      template: './' + src_Path + '/views/projects.html',
       filename: 'projects.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
       chunks: ['index'],
-      template: './' + src_Path + '/group.html',
+      template: './' + src_Path + '/views/group.html',
       filename: 'group.html'
     }),
     new HtmlWebpackPartialsPlugin([
