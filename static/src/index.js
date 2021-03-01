@@ -2,6 +2,21 @@ import 'normalize.css';
 import '@fortawesome/fontawesome-free/js/all.js';
 import './assets/scss/style.scss';
 import './assets/js/main.js';
+
+let accordions = Array.from(document.getElementsByClassName("header-three-accordion"));
+
+accordions.forEach( item => {
+	item.addEventListener('click', function() {
+    accordions.forEach(item => {
+      if (item !== this){
+        item.classList.remove('active')
+      }
+    });
+    this.classList.toggle("active");
+  });
+})
+
+
 // import './assets/js/vendor/pathseg.js';
 // import 'poly-decomp';
 // import Matter from 'matter-js';

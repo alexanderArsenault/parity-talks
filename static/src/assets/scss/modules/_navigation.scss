@@ -1,0 +1,89 @@
+.header {
+	display: flex;
+	flex-direction: column;
+	.header-list-right {
+		justify-content: flex-end;
+		display: flex;
+		h4 {
+			padding-right: 1rem;
+		}
+	}
+}
+
+.fixed-center {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+}
+
+.header-one, .header-two{
+	margin-top: 1rem;
+	padding: 0 1rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 0.5px solid $black;
+}
+
+.header-one-body {
+	.title:not(.active){
+		opacity: 0.2;
+	}
+}
+
+nav ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	li {
+		padding: 0 20px;
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+
+.header-three {
+	background-color: $black;
+	color: $white;
+}
+
+.header-three-block {
+	.header-three-title {
+		padding: 1rem;
+	font-size: 50px;
+	}
+	.header-three-body {
+		padding-top: 0;
+		padding: 0 1rem;
+	}
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.header-three-accordion {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.header-three-accordion:hover {
+  background-color: $primary;
+}
+
+/* Style the header-three-accordion panel. Note: hidden by default */
+.panel {
+	max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.header-three-accordion.active {
+	& + .panel {
+		max-height: 10000000px;
+	}
+}

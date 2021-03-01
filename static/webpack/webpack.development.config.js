@@ -121,6 +121,11 @@ module.exports = {
         template_filename: '*',
         location: 'head'
       },
+      {
+        path: path.join(__dirname, '../src/partials/footer.html'),
+        template_filename: '*',
+        location: 'footer'
+      },
     ]),
     new MiniCssExtractPlugin({
       filename: 'style.css',
