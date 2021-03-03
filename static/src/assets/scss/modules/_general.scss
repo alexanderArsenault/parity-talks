@@ -11,6 +11,7 @@ html {
   @include fluid-type($min_width, $max_width, $min_font, $max_font);
     font-family: 'Monument';
     -webkit-text-size-adjust:none;
+    background-color: $primary;
 }
 
 body {

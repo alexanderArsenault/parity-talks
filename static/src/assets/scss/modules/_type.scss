@@ -16,7 +16,7 @@ h4 {
 	a {
 		transition: all 0.3s ease;
 		&:not(:hover){
-			opacity: 0.2;
+			color: $grey;
 		}
 	}
 }
@@ -31,5 +31,8 @@ a {
 
 p {
 	font-family: sans-serif;
-	font-size: 0.75rem;
+	// font-size: 0.75rem;
+	font-size: 22px;
+	line-height: 28px;
+	font-weight: 600;
 }
