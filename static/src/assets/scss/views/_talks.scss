@@ -1,0 +1,63 @@
+.header-two {
+	h4.active a {
+		color: $black;
+	}
+}
+
+#nav-program {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	.program-list {
+		width: calc(100% / 6 * 4);
+		.program-entry-block {
+			&:first-of-type {
+				padding-top: 0;
+			}
+		}
+		.program-entry-title {
+			display: flex;
+			cursor: pointer;
+		}
+		.program-entry-detail {
+			@include small-text();
+			padding-left: 5px;
+		}
+		.program-entry-body {
+			max-height: 0;
+			overflow: hidden;
+			transition: all 0.2s ease-out;
+		}
+		// add margin to body when it's being displayed
+		.program-entry-title.active {
+			+ .program-entry-body {
+				margin: 2rem 0;
+				margin-bottom: 2.5rem;
+			}
+		}
+	}
+	.program-intro {
+		@include small-text();
+		display: flex;
+		justify-content: flex-end;
+		width: calc(100% / 6 * 2);
+	}
+}
+
+
+
+#nav-schedule {
+	display: flex;
+	flex-direction: column;
+	.schedule-entry-block {
+		padding: 1rem;
+		display: flex;
+	}
+	.schedule-entry-time {
+		width: calc(100% / 6 * 1);
+		padding-right: 1rem;
+	}
+	.schedule-entry-body {
+		width: calc(100% / 6 * 5);
+	}
+}

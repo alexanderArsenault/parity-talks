@@ -93,22 +93,22 @@ module.exports = {
       inject: false,
       hash: false,
       chunks: ['index'],
-      template: './' + src_Path + '/views/archive.html',
-      filename: 'archive.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: false,
-      chunks: ['index'],
-      template: './' + src_Path + '/views/projects.html',
-      filename: 'projects.html'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      hash: false,
-      chunks: ['index'],
       template: './' + src_Path + '/views/group.html',
       filename: 'group.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: false,
+      chunks: ['index'],
+      template: './' + src_Path + '/views/program.html',
+      filename: 'program.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: false,
+      chunks: ['index'],
+      template: './' + src_Path + '/views/schedule.html',
+      filename: 'schedule.html'
     }),
     new HtmlWebpackPartialsPlugin([
       {
@@ -125,6 +125,16 @@ module.exports = {
         path: path.join(__dirname, '../src/partials/footer.html'),
         template_filename: '*',
         location: 'footer'
+      },
+      {
+        path: path.join(__dirname, '../src/partials/nav-program.html'),
+        template_filename: '*',
+        location: 'nav-program'
+      },
+      {
+        path: path.join(__dirname, '../src/partials/nav-schedule.html'),
+        template_filename: '*',
+        location: 'nav-schedule'
       },
     ]),
     new MiniCssExtractPlugin({

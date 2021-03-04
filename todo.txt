@@ -1,8 +1,16 @@
-Webpack:
-// matterjs
-// swiper nav
-// add favicon
-//resizing
+general:
 
-//copy compiled styles into craft folder
-//loader for scss & fonts & images
+Center current nav / slider nav
+introduce hover effect
+live now changes
+sticky header   
+
+schedule: 
+introduce detail row
+
+talks: 
+program becomes talk - has intro text
+
+season:
+linebreak season date only on year
+has title subheading in some instances

@@ -1,12 +1,14 @@
 .header {
+	padding-top: 1rem;
 	display: flex;
 	flex-direction: column;
-	.header-list-right {
-		justify-content: flex-end;
-		display: flex;
-		h4 {
-			padding-right: 1rem;
-		}
+}
+
+.header-list-right {
+	justify-content: flex-end;
+	display: flex;
+	h4 {
+		padding-right: 1rem;
 	}
 }
 
@@ -16,10 +18,7 @@
 }
 
 .header-one, .header-two{
-	margin-top: 1rem;
 	padding: 0 1rem;
-	padding-bottom: 0.75rem;
-	border-bottom: 0.5px solid $black;
 }
 
 .header-one-body {
@@ -35,7 +34,7 @@ nav ul {
 	margin: 0;
 	padding: 0;
 	li {
-		padding: 0 20px;
+		padding: 0 0.5rem;
 		&:first-child {
 			padding-left: 0;
 		}
@@ -47,67 +46,4 @@ nav ul {
 
 .header-three {
 	color: $black;
-}
-
-.program-intro {
-	display: flex;
-	justify-content: flex-end;
-	padding: 1rem 2rem;
-	p {
-		width: calc(100% / 6 * 2);
-	}
-	border-bottom: 1px solid $black;
-}
-
-#nav-program {
-	display: flex;
-	flex-direction: column;
-	.program-entry-block {
-		padding: 1rem;
-		border-bottom: 1px solid $black;
-	}
-	.program-entry-title {
-		display: flex;
-	}
-	.program-entry-detail {
-		font-size: 12px;
-		padding-left: 5px;
-	}
-}
-
-#nav-schedule {
-	display: flex;
-	flex-direction: column;
-	.schedule-entry-block {
-		padding: 1rem;
-		display: flex;
-		border-bottom: 1px solid $black;
-	}
-	.schedule-entry-time {
-		width: calc(100% / 6 * 1);
-		padding-right: 1rem;
-	}
-	.schedule-entry-body {
-		width: calc(100% / 6 * 5);
-	}
-}
-/* Style the buttons that are used to open and close the accordion panel */
-.header-three-accordion {
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.header-three-accordion:hover {
-  background-color: $primary;
-}
-
-/* Style the header-three-accordion panel. Note: hidden by default */
-.panel {
-	max-height: 0;
-  overflow: hidden;
-  transition: all 0.2s ease-out;
 }

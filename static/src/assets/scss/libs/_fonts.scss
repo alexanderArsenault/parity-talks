@@ -1,4 +1,9 @@
 @font-face {
-  font-family: 'Monument';
-  src: url('../fonts/MonumentExtended-Regular.otf') format('opentype'); /* Pretty Modern Browsers */
+  font-family: 'ABCMonument';
+  src: url('../fonts/ABCMonumentGrotesk-Medium.otf') format('opentype'); /* Pretty Modern Browsers */
+}
+
+@font-face {
+  font-family: 'ABCMonumentItalic';
+  src: url('../fonts/ABCMonumentGrotesk-MediumItalic.otf') format('opentype'); /* Pretty Modern Browsers */
 }

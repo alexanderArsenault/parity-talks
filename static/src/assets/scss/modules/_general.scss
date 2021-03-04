@@ -9,13 +9,17 @@
 
 html {
   @include fluid-type($min_width, $max_width, $min_font, $max_font);
-    font-family: 'Monument';
+    font-family: 'ABCMonument';
     -webkit-text-size-adjust:none;
     background-color: $primary;
 }
 
+i {
+    font-family: 'ABCMonumentItalic';
+}
+
 body {
-    font-family: 'Monument', Arial, Helvetica, sans-serif;
+    font-family: 'ABCMonument', Arial, Helvetica, sans-serif;
     overflow-x: hidden;
 }
 

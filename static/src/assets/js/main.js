@@ -1,30 +1,45 @@
 // Accordions working
+let bottomOfPage = (window.innerHeight + window.scrollY) >= document.body.offsetHeight
 
-let accordions = Array.from(document.getElementsByClassName("header-three-accordion"));
 
-let showItem = function(toggled, panel){
-	toggled.classList.add("active")
+let activate = function(element){
+	element.classList.add("active")
+}
+
+let deactivate = function(element){
+	element.classList.remove("active")
+}
+
+let showPanel = function(activatedElement, panel){
+	activate(activatedElement)
 	panel.style.maxHeight = panel.scrollHeight + "px";
 }
-let hideItem = function(toggled, panel){
-	toggled.classList.remove("active")
+
+let hidePanel = function(deactivatedElement, panel){
+	deactivate(deactivatedElement);
 	panel.style.maxHeight = null;
 }
+
 let toggleItem = function(toggled, panel){
 	if (panel.style.maxHeight) {
-		hideItem(toggled, panel);
+		hidePanel(toggled, panel);
 	} else {
-		showItem(toggled, panel);
+		showPanel(toggled, panel);
 	}
 }
 
+let accordions = Array.from(document.getElementsByClassName("program-entry-title"));
+
 accordions.forEach( accordion => {
 	accordion.addEventListener('click', function() {
+	console.log(accordion)
+
 		let panel = this.nextElementSibling;
+		console.log(panel)
     accordions.forEach(item => {
       if (accordion !== this){
 				let accordionpanel = item.nextElementSibling;
-        hideItem(accordion, accordionpanel)
+        hidePanel(accordion, accordionpanel)
       }
     });
     toggleItem(this, panel);
@@ -45,8 +60,37 @@ navthreeitems.forEach( navitem => {
 });
 
 
+let seasonPageToggle = Array.from(document.getElementsByClassName("season-toggle"));
+
+seasonPageToggle.forEach( toggle => {
+
+	toggle.addEventListener('click', function(){
+		seasonPageToggle.forEach( toggleElement => {
+			let childElement = toggleElement.getElementsByTagName('h2')[0]
+			deactivate(childElement);
+		})
+		let childElement = this.getElementsByTagName('h2')[0]
+		activate(childElement)
+		document.getElementById('season').className = this.id
+	});
+
+});
 
 
+let seasonEntries = Array.from(document.getElementsByClassName("season-entry"));
+
+seasonEntries.forEach( (entry, index) => {
+
+	entry.addEventListener('click', function(){
+		let panel =	this.getElementsByClassName('season-entry-detail')[0];
+		toggleItem(this, panel)
+
+		// scroll down to show opened panel if its the last
+		// if (index + 1 == seasonEntries.length && bottomOfPage){
+		// 	panel.scrollIntoView()
+		// }
+	});
+});
 
 
 let hamburgerActive = function(event){
