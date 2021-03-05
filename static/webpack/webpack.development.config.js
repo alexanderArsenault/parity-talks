@@ -100,8 +100,8 @@ module.exports = {
       inject: false,
       hash: false,
       chunks: ['index'],
-      template: './' + src_Path + '/views/program.html',
-      filename: 'program.html'
+      template: './' + src_Path + '/views/info.html',
+      filename: 'info.html'
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -125,16 +125,6 @@ module.exports = {
         path: path.join(__dirname, '../src/partials/footer.html'),
         template_filename: '*',
         location: 'footer'
-      },
-      {
-        path: path.join(__dirname, '../src/partials/nav-program.html'),
-        template_filename: '*',
-        location: 'nav-program'
-      },
-      {
-        path: path.join(__dirname, '../src/partials/nav-schedule.html'),
-        template_filename: '*',
-        location: 'nav-schedule'
       },
     ]),
     new MiniCssExtractPlugin({

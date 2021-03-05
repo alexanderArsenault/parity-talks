@@ -1,7 +1,6 @@
 // Accordions working
 let bottomOfPage = (window.innerHeight + window.scrollY) >= document.body.offsetHeight
 
-
 let activate = function(element){
 	element.classList.add("active")
 }
@@ -28,37 +27,15 @@ let toggleItem = function(toggled, panel){
 	}
 }
 
-let accordions = Array.from(document.getElementsByClassName("program-entry-title"));
+let accordions = Array.from(document.getElementsByClassName("program-entry"));
 
 accordions.forEach( accordion => {
 	accordion.addEventListener('click', function() {
-	console.log(accordion)
-
-		let panel = this.nextElementSibling;
-		console.log(panel)
-    accordions.forEach(item => {
-      if (accordion !== this){
-				let accordionpanel = item.nextElementSibling;
-        hidePanel(accordion, accordionpanel)
-      }
-    });
-    toggleItem(this, panel);
+		let panel =	this.getElementsByClassName('program-entry-detail')[0];
+		preventLinkClicks(panel);
+		toggleItem(this, panel)
   });
 })
-
-let navthreeitems = Array.from(document.getElementsByClassName("nav-three-item"));
-
-navthreeitems.forEach( navitem => {
-	navitem.addEventListener('click', function(){
-		let selectedpanel = document.getElementById(navitem.id);
-		if (navitem !== this){
-			let accordionpanel = document.getElementById(item.id);
-			hideItem(item, accordionpanel)
-		}
-		toggleItem(this, selectedpanel);
-	});
-});
-
 
 let seasonPageToggle = Array.from(document.getElementsByClassName("season-toggle"));
 
@@ -83,6 +60,7 @@ seasonEntries.forEach( (entry, index) => {
 
 	entry.addEventListener('click', function(){
 		let panel =	this.getElementsByClassName('season-entry-detail')[0];
+		preventLinkClicks(panel);
 		toggleItem(this, panel)
 
 		// scroll down to show opened panel if its the last
@@ -91,6 +69,17 @@ seasonEntries.forEach( (entry, index) => {
 		// }
 	});
 });
+
+let scheduleEntry = Array.from(document.getElementsByClassName("schedule-entry"));
+
+scheduleEntry.forEach( (entry, index) => {
+
+	entry.addEventListener('click', function(event){
+		let panel =	this.getElementsByClassName('schedule-entry-detail')[0];
+		preventLinkClicks(panel);
+		toggleItem(this, panel)
+	});
+})
 
 
 let hamburgerActive = function(event){
@@ -102,4 +91,13 @@ let hamburgers = document.getElementsByClassName('hamburger');
 
 for (var i = 0; i < hamburgers.length; i++) {
 	hamburgers[i].addEventListener('click', hamburgerActive, false);
+}
+
+let preventLinkClicks = function(parentElement){
+	Array.from(parentElement.getElementsByTagName("a")).forEach( element => {
+		element.addEventListener("click", function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+		})
+	});
 }

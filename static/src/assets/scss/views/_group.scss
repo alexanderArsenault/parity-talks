@@ -11,14 +11,12 @@
 	}
 }
 
-.group-header {
-	width: 100%;
-	text-align: center;
-	letter-spacing: -2%;
+.group.title-header {
+	text-align: left;
 }
 
 .group-entry-block {
-	margin-bottom: 3rem;
+	margin-bottom: 2rem;
 	.group-entry-title {
 		margin-bottom: 1rem;
 	}

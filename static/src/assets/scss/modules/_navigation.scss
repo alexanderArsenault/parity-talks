@@ -9,6 +9,9 @@
 	display: flex;
 	h4 {
 		padding-right: 1rem;
+		&:hover {
+			color: $black;
+		}
 	}
 }
 

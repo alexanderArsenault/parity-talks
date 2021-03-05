@@ -1,16 +1,15 @@
 general:
 
-Center current nav / slider nav
-introduce hover effect
-live now changes
-sticky header   
-
-schedule: 
-introduce detail row
-
-talks: 
-program becomes talk - has intro text
+	Center current nav / slider nav
+	introduce hover effect
+	live now changes
+	sticky header   
+	generalize panel/detail showing
 
 season:
 linebreak season date only on year
-has title subheading in some instances
+
+Notes:
+
+	Season:
+	title only shows on month view

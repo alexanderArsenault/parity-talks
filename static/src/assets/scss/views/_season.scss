@@ -41,8 +41,24 @@
 		.season-entry-title {
 			@include title();
 		}
+		.season-entry-description {
+			> h4 {
+				display: block
+			}
+		}
 	}
 }
+
+#season {
+	&.year {
+		.season-entry-description {
+			> h4 {
+				display: none;
+			}
+		}
+	}
+}
+
 .season-entry {
 	&.offline {
 		background-color: $black;
