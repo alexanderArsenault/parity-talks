@@ -40,3 +40,16 @@ body {
 	padding: 0 1rem;
     padding-bottom: 1rem;
 }
+
+.mobile {
+    display: none;
+    @media only screen and (max-width: $mobile) {
+        display: block;
+    }
+}
+
+.mobile-hide {
+    @media only screen and (max-width: $mobile) {
+        display: none;
+    }
+}

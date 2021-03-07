@@ -126,6 +126,11 @@ module.exports = {
         template_filename: '*',
         location: 'footer'
       },
+      {
+        path: path.join(__dirname, '../src/partials/mobile-nav.html'),
+        template_filename: '*',
+        location: 'mobile-nav'
+      },
     ]),
     new MiniCssExtractPlugin({
       filename: 'style.css',

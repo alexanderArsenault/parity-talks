@@ -70,37 +70,86 @@
 	cursor: pointer;
 	display: flex;
 	padding: 1rem;
-	.season-entry-date {
-		width: calc(100% / 6 * 1);
-	}
-	.season-entry-description {
-		width: calc(100% / 6 * 5);
-		display: flex;
-		flex-direction: column;
-		.season-entry-title {
-			width: calc(100% / 5 * 4);
-		}
-	}
-	.season-entry-detail {
-		max-height: 0;
-		justify-content: space-between;
-		overflow: hidden;
-		display: flex;
-		transition: all 0.2s ease;
-	}
 	&.active {
 		.season-entry-detail {
 			margin-top: 2rem;
 			margin-bottom: 1rem;
 		}
 	}
+}
+.season-entry-date {
+	word-break: break-all;
+	padding-right: 1rem;
+	width: calc(100% / 6 * 1);
+}
+.season-entry-description {
+	width: calc(100% / 6 * 5);
+	display: flex;
+	flex-direction: column;
+}
+
+.season-entry-title {
+	width: calc(100% / 5 * 4);
+}
+
+.season-entry-detail {
+	max-height: 0;
+	justify-content: space-between;
+	overflow: hidden;
+	display: flex;
+	transition: all 0.2s ease;
+}
+
+.season-entry-body {
+	width: calc(100% / 5 * 3);
+}
+.season-entry-info {
+	width: calc(100% / 5 * 1);
+}
+.season-entry-host {
+	padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: $mobile) {
+	#season-header {
+		.header-main {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+		.online-legend {
+			align-self: flex-end;
+			padding-top: 1rem;
+			.legend {
+				text-transform: capitalize;
+				@include text();
+			}
+		}
+	}
+	.season-entry {
+		flex-direction: column;
+	}
+	.season-entry-body,
+	.season-entry-title,
+	.season-entry-info,
+	.season-entry-date,
+	.season-entry-description {
+		width: 100%;
+	}
 	.season-entry-body {
-		width: calc(100% / 5 * 3);
+		padding-bottom: 1rem;
+	}
+	.season-entry-time {
+		padding-bottom: 0.5rem;
 	}
 	.season-entry-info {
-		width: calc(100% / 5 * 1);
+		display: flex;
+		justify-content: space-between;
+		.season-entry-link {
+			@include small-text();
+		}
 	}
-	.season-entry-host {
-		padding-bottom: 1rem;
+	.season-entry-detail {
+		flex-wrap: wrap;
 	}
 }

@@ -101,3 +101,34 @@ let preventLinkClicks = function(parentElement){
 		})
 	});
 }
+
+// let centerNavigation = function(){
+// 	let nav = document.getElementById('primary-nav');
+// 	let active = nav.getElementsByClassName('active')[0];
+
+// 	// get the page center
+// 	// get the distance between the center of the item and the middle
+// 	// move that many pixels over
+// 	let pagecenter = window.screen.width / 2;
+
+// 	let activeRect = active.getBoundingClientRect();
+// 	let activeCenterPixelsFromLeft = activeRect.right - (activeRect.width / 2)
+// 	let distanceFromCenter = pagecenter - activeCenterPixelsFromLeft
+
+// 	console.log(pagecenter);
+// 	console.log(distanceFromCenter);
+
+// 	nav.style.position = 'relative'
+//   nav.style.left = distanceFromCenter / 2 + 'px';
+// }
+
+// centerNavigation();
+
+let closebuttons = document.getElementsByClassName('toggle-nav')
+let nav = document.getElementById('mobile-nav');
+
+Array.from(closebuttons).forEach( element => {
+	element.addEventListener("click", function(e) {
+		nav.classList.toggle('active');
+	})
+});
