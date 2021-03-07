@@ -6,7 +6,4 @@ season:
 linebreak season date only on year
 title only shows on month view
 
-midsized views
-	-season take full width
-	-header changes
 embed stream

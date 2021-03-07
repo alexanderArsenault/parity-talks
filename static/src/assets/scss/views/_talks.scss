@@ -102,15 +102,40 @@
 	}
 }
 
-#schedule, .title-header {
-	margin-top: 190px;
+#schedule, .title-header:not(.group) {
+	margin-top: 185px;
+}
+
+@media only screen and (max-width: $desktop) {
+	#schedule, .title-header:not(.group) {
+		margin-top: 295px;
+	}
+.talks {
+	.header-two {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.nav-three-item {
+		@include title();
+	}
+	.header-two {
+		.header-list-right {
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+	.header-two-main {
+		order: -1;
+	}
+}
 }
 
 
 // schedule
 @media only screen and (max-width: $mobile) {
 
-	#schedule, .title-header {
+	#schedule, .title-header:not(.group) {
 	margin-top: 230px;
 	}
 

@@ -28,9 +28,8 @@
 		}
 	}
 }
-#season {
-	margin-top: 240px;
-}
+
+
 
 .header-list-right {
 	justify-content: flex-end;
@@ -106,6 +105,16 @@ nav ul {
 	}
 }
 
+
+@media only screen and (max-width: $desktop) {
+	.header.talks {
+		.header-list-right {
+			padding-left: 1rem;
+		}
+	}
+}
+
+
 @media only screen and (max-width: $mobile) {
 
 	#primary-nav {
@@ -136,7 +145,7 @@ nav ul {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			h4 {
+			.nav-three-item {
 				@include title();
 			}
 			.header-list-right {

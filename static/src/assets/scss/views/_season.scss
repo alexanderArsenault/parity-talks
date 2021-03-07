@@ -1,5 +1,5 @@
 #season {
-	margin-top: 200px
+	margin-top: 185px;
 }
 
 .header-main {
@@ -44,6 +44,9 @@
 		.season-entry-date,
 		.season-entry-title {
 			@include title();
+			p {
+				@include title();
+			}
 		}
 		.season-entry-description {
 			> h4 {
@@ -114,9 +117,22 @@
 	padding-bottom: 1rem;
 }
 
+@media only screen and (max-width: $desktop) {
+
+	.season-entry {
+		flex-direction: column;
+	}
+	.month {
+		.season-entry-date,
+		.season-entry-description {
+			width: 100%;
+		}
+	}
+}
+
 @media only screen and (max-width: $mobile) {
 	#season {
-		margin-top: 240px;
+		margin-top: 220px;
 	}
 	#season-header {
 		.header-main {
@@ -133,9 +149,7 @@
 			}
 		}
 	}
-	.season-entry {
-		flex-direction: column;
-	}
+
 	.season-entry-body,
 	.season-entry-title,
 	.season-entry-info,
