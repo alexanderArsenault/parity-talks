@@ -1,3 +1,7 @@
+#season {
+	margin-top: 200px
+}
+
 .header-main {
 	display: flex;
 	justify-content: center;
@@ -111,6 +115,9 @@
 }
 
 @media only screen and (max-width: $mobile) {
+	#season {
+		margin-top: 240px;
+	}
 	#season-header {
 		.header-main {
 			width: 100%;

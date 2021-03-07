@@ -2,6 +2,10 @@
 	padding-top: 1rem;
 	display: flex;
 	flex-direction: column;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: $primary;
 	&.group {
 		#primary-nav {
 			transition: all 0.2s ease-out;
@@ -23,6 +27,9 @@
 			left: -233px;
 		}
 	}
+}
+#season {
+	margin-top: 240px;
 }
 
 .header-list-right {
@@ -85,6 +92,20 @@ nav ul {
 	display: none;
 }
 
+.header-two-left {
+	display: flex;
+	.live-now-container {
+		color: $black;
+		padding-left: 1rem;
+	}
+}
+
+.header:not(.live){
+	.live-now {
+		display: none;
+	}
+}
+
 @media only screen and (max-width: $mobile) {
 
 	#primary-nav {
@@ -127,7 +148,7 @@ nav ul {
 			}
 		}
 		#mobile-nav {
-			position: absolute;
+			position: fixed;
 			min-height: 100vh;
 			width: 100%;
 			top:-100%;
@@ -135,9 +156,7 @@ nav ul {
 			background-color: $black;
 			display: flex;
 			transition: all 0.2s ease-out;
-			&.active {
-				top: 0;
-			}
+
 			.title {
 				color: $grey;
 				display: block;
@@ -146,14 +165,22 @@ nav ul {
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
+				position: relative;
 				width: 100%;
+				background-color: transparent;
 			}
-
+			.mobile-nav-links:hover {
+				color: $primary;
+			}
+			.nav-main-item:hover a {
+				color: $primary;
+			}
 			.header-one {
 				h4 {
 					color: $grey;
 				}
 			}
+
 			#primary-nav {
 				display: flex;
 				justify-content: center;
@@ -168,6 +195,12 @@ nav ul {
 				h4 {
 					margin-bottom: 2rem;
 				}
+			}
+		}
+		.show-mobile-nav {
+			max-height: 100vh;
+			#mobile-nav {
+					top: 0;
 			}
 		}
 	}

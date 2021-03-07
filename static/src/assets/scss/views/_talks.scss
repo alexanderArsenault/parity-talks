@@ -101,8 +101,19 @@
 		padding-bottom: 1rem;
 	}
 }
+
+#schedule, .title-header {
+	margin-top: 190px;
+}
+
+
 // schedule
 @media only screen and (max-width: $mobile) {
+
+	#schedule, .title-header {
+	margin-top: 230px;
+	}
+
 	.info-text,
 	.program-list,
 	.program-entry-detail,

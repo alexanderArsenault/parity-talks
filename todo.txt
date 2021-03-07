@@ -1,15 +1,12 @@
-general:
-
-	Center current nav / slider nav
-	introduce hover effect
-	live now changes
-	sticky header   
-	generalize panel/detail showing
+go-to-prod:
+	add live class to header in prod
+	Favicon in prod
 
 season:
 linebreak season date only on year
+title only shows on month view
 
-Notes:
-
-	Season:
-	title only shows on month view
+midsized views
+	-season take full width
+	-header changes
+embed stream

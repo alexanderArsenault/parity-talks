@@ -125,10 +125,10 @@ let preventLinkClicks = function(parentElement){
 // centerNavigation();
 
 let closebuttons = document.getElementsByClassName('toggle-nav')
-let nav = document.getElementById('mobile-nav');
+let body = document.getElementsByTagName('body')[0];
 
 Array.from(closebuttons).forEach( element => {
 	element.addEventListener("click", function(e) {
-		nav.classList.toggle('active');
+		body.classList.toggle('show-mobile-nav');
 	})
 });
