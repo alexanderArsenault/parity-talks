@@ -6,4 +6,5 @@ season:
 linebreak season date only on year
 title only shows on month view
 
-embed stream
+
+Program Entries

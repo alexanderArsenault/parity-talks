@@ -75,6 +75,7 @@ module.exports = {
     ]
   },
   plugins: [
+    
     new HtmlWebpackPlugin({
       inject: false,
       hash: false,
