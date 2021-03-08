@@ -82,17 +82,6 @@ scheduleEntry.forEach( (entry, index) => {
 })
 
 
-let hamburgerActive = function(event){
-	document.getElementById('navigation').classList.toggle('is-active');
-	this.classList.toggle('is-active');
-}
-
-let hamburgers = document.getElementsByClassName('hamburger');
-
-for (var i = 0; i < hamburgers.length; i++) {
-	hamburgers[i].addEventListener('click', hamburgerActive, false);
-}
-
 let preventLinkClicks = function(parentElement){
 	Array.from(parentElement.getElementsByTagName("a")).forEach( element => {
 		element.addEventListener("click", function(e) {
@@ -101,28 +90,6 @@ let preventLinkClicks = function(parentElement){
 		})
 	});
 }
-
-// let centerNavigation = function(){
-// 	let nav = document.getElementById('primary-nav');
-// 	let active = nav.getElementsByClassName('active')[0];
-
-// 	// get the page center
-// 	// get the distance between the center of the item and the middle
-// 	// move that many pixels over
-// 	let pagecenter = window.screen.width / 2;
-
-// 	let activeRect = active.getBoundingClientRect();
-// 	let activeCenterPixelsFromLeft = activeRect.right - (activeRect.width / 2)
-// 	let distanceFromCenter = pagecenter - activeCenterPixelsFromLeft
-
-// 	console.log(pagecenter);
-// 	console.log(distanceFromCenter);
-
-// 	nav.style.position = 'relative'
-//   nav.style.left = distanceFromCenter / 2 + 'px';
-// }
-
-// centerNavigation();
 
 let closebuttons = document.getElementsByClassName('toggle-nav')
 let body = document.getElementsByTagName('body')[0];
