@@ -20,7 +20,7 @@
 				<ul id="primary-nav">
 					<li class="nav-main-item title"><a href="/group">Group</a></li>
 					<li class="nav-main-item title active"><a href="/talks">Talks</a></li>
-					<li class="nav-main-item title"><a href="/season">Season</a></li>
+					<li class="nav-main-item title"><a href="/season">Season</a></li>	
 				</ul>
 			</nav>
 		</div>
@@ -39,84 +39,25 @@
 
 <main id="schedule">
 	<!-- Schedule Entry -->
-	<div class="schedule-entry">
+	{% set entries = craft.entries.section('schedule').orderBy('startTime asc').all() %}
+	{% for schedule in entries %}
+
+	<div class="schedule-entry{% if schedule.description == false %} no-click{% endif %}">
 		<!-- Schedule Entry Time -->
 			<div class="schedule-entry-time">
-				<p>8:30</p>
+				<p>{{ schedule.startTime|date('H:i') }}</p>
 			</div>
 			<!-- Schedule Entry Rich Text -->
 			<div class="schedule-entry-body">
-				<p>Womxn in Design Graduate School of Design committed by the Parity Board (TU Munich)</p>
-				<div class="schedule-entry-detail">
-					Womxn in Design is a student run organization at Harvard Graduate School of Design committed to advancing gender equity in and through design.
-				</div>
+				<p>{{ schedule.title }}</p>
+				{% if schedule.description %}
+					<div class="schedule-entry-detail">	
+						{{ schedule.description}}
+					</div>
+				{% endif %}
 			</div>
 	</div>
-	<div class="schedule-entry">
-		<!-- Schedule Entry Time -->
-			<div class="schedule-entry-time">
-				<p>8:30</p>
-			</div>
-			<!-- Schedule Entry Rich Text -->
-			<div class="schedule-entry-body">
-				<p>Meike Schalk (Anna Boyksen Fellow) Introduced by the Parity Board (TU Munich)</p>
-				<div class="schedule-entry-detail">
-					Womxn in Design is a student run organization at Harvard Graduate School of Design committed to advancing gender equity in and through design.
-				</div>
-			</div>
-	</div>
-	<div class="schedule-entry">
-		<!-- Schedule Entry Time -->
-			<div class="schedule-entry-time">
-				<p>8:30</p>
-			</div>
-			<!-- Schedule Entry Rich Text -->
-			<div class="schedule-entry-body">
-				<p>“Rethinking Institutionalized Patterns” Introduced by the Parity Board (TU Munich)</p>
-				<div class="schedule-entry-detail">
-					Womxn in Design is a student run organization at Harvard Graduate School of Design committed to advancing gender equity in and through design.
-				</div>
-			</div>
-	</div>
-	<div class="schedule-entry">
-		<!-- Schedule Entry Time -->
-			<div class="schedule-entry-time">
-				<p>8:30</p>
-			</div>
-			<!-- Schedule Entry Rich Text -->
-			<div class="schedule-entry-body">
-				<p>Meike Schalk “Rethinking Institutionalized Patterns” Introduced by the Parity Board (TU Munich)</p>
-				<div class="schedule-entry-detail">
-					Womxn in Design is a student run organization at Harvard Graduate School of Design committed to advancing gender equity in and through design.
-				</div>
-			</div>
-	</div>
-	<div class="schedule-entry">
-		<!-- Schedule Entry Time -->
-			<div class="schedule-entry-time">
-				<p>8:30</p>
-			</div>
-			<!-- Schedule Entry Rich Text -->
-			<div class="schedule-entry-body">
-				<p>Meike Schalk (Anna Boyksen Fellow) Introduced by the Parity Board (TU Munich)</p>
-				<div class="schedule-entry-detail">
-					Womxn in Design is a student run organization at Harvard Graduate School of Design committed to advancing gender equity in and through design.
-				</div>
-			</div>
-	</div>
-	<div class="schedule-entry">
-		<!-- Schedule Entry Time -->
-			<div class="schedule-entry-time">
-				<p>8:30</p>
-			</div>
-			<!-- Schedule Entry Rich Text -->
-			<div class="schedule-entry-body">
-				<p>Meike Schalk (Anna Boyksen Fellow) “Rethinking Institutionalized Patterns” Parity Board (TU Munich)</p>
-				<div class="schedule-entry-detail">
-					Womxn in Design is a student run organization at Harvard Graduate School of Design committed to advancing gender equity in and through design.
-				</div>
-			</div>
-	</div>
+	{% endfor %}
 </main>
 
 {% endblock %}

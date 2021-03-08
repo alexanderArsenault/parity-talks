@@ -39,9 +39,8 @@
 				<p>Supporters</p>
 			</div>
 			<div class="group-entry-body">
-				<p>Lorem ipsum dolor sit amet consectetur.</p>
-				<p>Reprehenderit magnam autem voluptatibus odio ullam?</p>
-				<p>Nihil quod reprehenderit rerum qui consequatur?</p>
+				<p>{{ entry.groupSupportersList | nl2br }}</p>
+				
 			</div>
 		</div>
 		<div class="group-entry-block">
@@ -49,11 +48,11 @@
 				<p>Partners</p>
 			</div>
 			<div class="group-entry-body">
-				<p>Reprehenderit magnam autem voluptatibus odio ullam?</p>
-				<p>Lorem ipsum dolor sit amet consectetur.</p>
-				<p>Reprehenderit magnam autem voluptatibus odio ullam?</p>
-				<p>Nihil quod reprehenderit rerum qui consequatur?</p>
-				<p>Reprehenderit magnam autem voluptatibus odio ullam?</p>
+				{% set partners = craft.entries.section('partners').all() %}
+
+				{% for entry in partners %}
+					<p>{{ entry.title }}</p>
+				{% endfor %}
 			</div>
 		</div>
 		<div class="group-detail mobile-hide">
@@ -71,26 +70,7 @@
 			<p>Current members</p>
 		</div>
 		<div class="aside-body">
-			<p>Lorem, ipsum.</p>
-			<p>Blanditiis, incidunt?</p>
-			<p>Nemo, eos.</p>
-			<p>Beatae, ad.</p>
-			<p>Eius, debitis?</p>
-			<p>Necessitatibus, aperiam.</p>
-			<p>Consectetur, molestias?</p>
-			<p>Voluptates, quidem!</p>
-			<p>Enim, voluptatem?</p>
-			<p>Architecto, sint!</p>
-			<p>Iste, accusamus.</p>
-			<p>Magni, eveniet.</p>
-			<p>Exercitationem, natus.</p>
-			<p>Ab, fugit?</p>
-			<p>Aspernatur, possimus!</p>
-			<p>Optio, qui.</p>
-			<p>Quis, accusantium?</p>
-			<p>Magnam, voluptates.</p>
-			<p>Culpa, libero.</p>
-			<p>Unde, ullam.</p>
+				<p>{{ entry.groupCurrentMembers | nl2br }}</p>
 		</div>
 	</aside>
 	<div class="mobile mobile-group-details">

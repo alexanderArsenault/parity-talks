@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: e832593f-a414-44f1-87fd-cdbb1026b456 # Group
+handle: groupSupportersList
+instructions: 'Use line breaks to start a new line.'
+name: Supporters
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: '1'
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

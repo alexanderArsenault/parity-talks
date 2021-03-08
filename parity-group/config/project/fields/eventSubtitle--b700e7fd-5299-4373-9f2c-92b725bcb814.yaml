@@ -1,0 +1,18 @@
+contentColumnType: string(200)
+fieldGroup: cd8ebbf8-cbf5-4613-92dd-7841c73ddbdb # Event
+handle: eventSubtitle
+instructions: ''
+name: 'Event Heading Small Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 50
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

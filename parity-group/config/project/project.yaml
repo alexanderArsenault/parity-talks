@@ -1,8 +1,13 @@
-dateModified: 1615208176
+dateModified: 1615239000
 email:
   fromEmail: rsenaultc@gmail.com
   fromName: parity-group
   transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 system:
   edition: solo
   live: true

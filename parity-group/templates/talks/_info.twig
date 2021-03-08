@@ -52,40 +52,25 @@
 		<!-- Program Entry -->
 		<h4 class="program-header">Partners of the Parity Talks 2021:</h4>
 		<div class="program-list">
+
+			{% set entries = craft.entries.section('partners').all() %}
+			{% for partner in entries %}
 			<div class="program-entry">
-				<div class="program-entry-title">
+				<div class="program-entry-title{% if (partner.partnersDescription == false and partner.partnerWebsite == false) %} no-click{% endif %}">
 					<!-- Entry Title -->
-					<p>Parity Group</p>
+					<p>{{partner.title}}</p>
 					<!-- Entry Detail -->
 				</div>
+				{% if (partner.partnersDescription or partner.partnerWebsite) %}
 				<div class="program-entry-detail">
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus voluptates blanditiis delectus maxime aut culpa, consequuntur eius amet facilis quod provident quis dolor optio voluptate consectetur! Dolores atque, amet ex et explicabo, optio asperiores earum saepe a, maiores esse laborum? Ducimus reiciendis magni, perspiciatis distinctio totam quo aliquid maxime aut?</p>
-					<!-- TODO: For link in links -->
-					<p class="link"><a href="#">Website</a></p>
+					<p>{{partner.partnersDescription}}</p>
+					{% if partner.partnerWebsite %}
+					<p class="link"><a href="{{ partner.partnerWebsite }}">Website</a></p>
+					{% endif %}
 				</div>
+				{% endif %}
 			</div>
-			<div class="program-entry">
-				<div class="program-entry-title">
-					<p>WOMXN IN DESIGN (Harvard GSD)</p>
-				</div>
-				<div class="program-entry-detail">
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus voluptates blanditiis delectus maxime aut culpa, consequuntur eius amet facilis quod provident quis dolor optio voluptate consectetur! Dolores atque, amet ex et explicabo, optio asperiores earum saepe a, maiores esse laborum? Ducimus reiciendis magni, perspiciatis distinctio totam quo aliquid maxime aut?</p>
-					<!-- TODO: For link in links -->
-					<p class="link"><a href="#">Website</a></p>
-				</div>
-			</div>
-			<div class="program-entry">
-				<div class="program-entry-title">
-					<p>CLAIMING*SPACES (Tu Wein)</p>
-				</div>
-				<div class="program-entry-detail">
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus voluptates blanditiis delectus maxime aut culpa, consequuntur eius amet facilis quod provident quis dolor optio voluptate consectetur! Dolores atque, amet ex et explicabo, optio asperiores earum saepe a, maiores esse laborum? Ducimus reiciendis magni, perspiciatis distinctio totam quo aliquid maxime aut?</p>
-					<!-- TODO: For link in links -->
-					<p class="link"><a href="#">Website</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+			{% endfor %}
 </main>
 
 {% endblock %}

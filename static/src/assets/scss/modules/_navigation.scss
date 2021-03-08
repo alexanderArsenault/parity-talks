@@ -161,11 +161,11 @@ nav ul {
 			position: fixed;
 			min-height: 100vh;
 			width: 100%;
-			top:-100%;
+			top:-120%;
 			left: 0;
 			background-color: $black;
 			display: flex;
-			transition: all 0.2s ease-out;
+			transition: all 0.3s ease-out;
 
 			.title {
 				color: $grey;

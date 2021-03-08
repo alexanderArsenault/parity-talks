@@ -1,0 +1,13 @@
+contentColumnType: boolean
+fieldGroup: cd8ebbf8-cbf5-4613-92dd-7841c73ddbdb # Event
+handle: onlineOrOffline
+instructions: 'Is the event online or offline?'
+name: 'Online or Offline'
+searchable: false
+settings:
+  default: false
+  offLabel: Offline
+  onLabel: Online
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
