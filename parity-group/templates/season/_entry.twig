@@ -1,4 +1,6 @@
-<head></head>
+{% extends "_layouts/default" %}
+
+{% block content %}
 
 <div class="header season">
 	<!-- Main header -->
@@ -16,11 +18,10 @@
 		<div class="header-one-body">
 			<nav>
 				<ul id="primary-nav">
-					<li class="nav-main-item title"><a href="/group.html">Group</a></li>
-					<li class="nav-main-item title"><a href="/index.html">Talks</a></li>
-					<li class="nav-main-item title active"><a href="/season.html">Season</a></li>
-					<!-- <li class="nav-main-item title"><a href="/projects.html">Projects</a></li> -->
-					<!-- <li class="nav-main-item title"><a href="/archive.html">Archive</a></li> -->
+					<li class="nav-main-item title"><a href="/group">Group</a></li>
+					<li class="nav-main-item title"><a href="/talks">Talks</a></li>
+					<li class="nav-main-item title active"><a href="/season">Season</a></li>
+
 				</ul>
 			</nav>
 		</div>
@@ -131,6 +132,4 @@
 	</div>
 </main>
 
-<footer></footer>
-</body>
-</html>
+{% endblock %}
