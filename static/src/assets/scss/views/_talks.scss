@@ -102,12 +102,22 @@
 	}
 }
 
-#schedule, .title-header:not(.group) {
+#schedule, .title-header:not(.group), #stream {
 	margin-top: 185px;
 }
 
+#stream {
+	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	align-items: center;
+}
+#twitch-embed {
+	width: 100%;
+}
 @media only screen and (max-width: $desktop) {
-	#schedule, .title-header:not(.group) {
+	#schedule, .title-header:not(.group), #stream {
 		margin-top: 295px;
 	}
 .talks {
@@ -135,7 +145,7 @@
 // schedule
 @media only screen and (max-width: $mobile) {
 
-	#schedule, .title-header:not(.group) {
+	#schedule, .title-header:not(.group), #stream {
 	margin-top: 230px;
 	}
 
