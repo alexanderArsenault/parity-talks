@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 5
+template: /season/_entry.twig
+uriParts:
+  - season
+uriPattern: season

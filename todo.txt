@@ -1,0 +1,10 @@
+go-to-prod:
+	add live class to header in prod
+	Favicon in prod
+
+season:
+linebreak season date only on year
+title only shows on month view
+
+
+webpack compile css to assets

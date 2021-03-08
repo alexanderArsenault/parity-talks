@@ -1,0 +1,17 @@
+dateModified: 1615208176
+email:
+  fromEmail: rsenaultc@gmail.com
+  fromName: parity-group
+  transportType: craft\mail\transportadapters\Sendmail
+system:
+  edition: solo
+  live: true
+  name: parity-group
+  schemaVersion: 3.6.6
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true
