@@ -64,9 +64,9 @@ fieldLayouts:
             width: 50
           -
             fieldUid: 34b5621a-bcd7-4037-b537-7069dddcb513 # Description
-            instructions: null
-            label: null
-            required: false
+            instructions: 'This is the field that is shown when you click an event and expand it.'
+            label: Description
+            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -82,9 +82,9 @@ fieldLayouts:
             width: 50
           -
             fieldUid: 2a0ebe42-d3d2-46e7-bb92-b605a8b36cd6 # Online or Offline
-            instructions: null
-            label: null
-            required: false
+            instructions: 'Select if the event is happening online or not. This Styles it accordingly on the website.'
+            label: ''
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -94,7 +94,7 @@ fieldLayouts:
 handle: events
 hasTitleField: true
 name: Events
-section: 9386ce07-ee4b-4661-ae65-70beb33ed42f # Events
+section: 9386ce07-ee4b-4661-ae65-70beb33ed42f # Season
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

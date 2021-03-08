@@ -57,7 +57,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/style.css',
+      filename: '../../parity-group/web/assets/style.css',
     }),
     // new CopyPlugin({
     //   patterns: [

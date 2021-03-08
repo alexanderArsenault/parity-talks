@@ -7,4 +7,10 @@ linebreak season date only on year
 title only shows on month view
 
 
-webpack compile css to assets
+season and group get white backgrounds
+events
+
+
+partners {
+	expanded partner text must be labelled as such
+}

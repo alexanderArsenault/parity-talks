@@ -30,8 +30,6 @@
 	}
 }
 
-
-
 .header-list-right {
 	justify-content: flex-end;
 	display: flex;
@@ -159,12 +157,12 @@ nav ul {
 		}
 		#mobile-nav {
 			position: fixed;
+			display: flex;
 			min-height: 100vh;
 			width: 100%;
-			top:-120%;
-			left: 0;
+			left:-110%;
+			top: 0;
 			background-color: $black;
-			display: flex;
 			transition: all 0.3s ease-out;
 
 			.title {
@@ -210,7 +208,8 @@ nav ul {
 		.show-mobile-nav {
 			max-height: 100vh;
 			#mobile-nav {
-					top: 0;
+				display: flex;
+				left: 0;
 			}
 		}
 	}

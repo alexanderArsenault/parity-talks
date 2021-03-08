@@ -85,7 +85,6 @@ scheduleEntry.forEach( (entry, index) => {
 let preventLinkClicks = function(parentElement){
 	Array.from(parentElement.getElementsByTagName("a")).forEach( element => {
 		element.addEventListener("click", function(e) {
-			e.preventDefault();
 			e.stopPropagation();
 		})
 	});
