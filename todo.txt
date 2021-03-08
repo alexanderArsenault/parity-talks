@@ -7,4 +7,4 @@ linebreak season date only on year
 title only shows on month view
 
 
-Program Entries
+webpack compile css to assets

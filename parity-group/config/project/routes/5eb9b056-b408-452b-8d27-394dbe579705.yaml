@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 2
+template: /talks/_info.twig
+uriParts:
+  - talks/info
+uriPattern: talks/info

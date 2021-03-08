@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 3
+template: /talks/_schedule.twig
+uriParts:
+  - talks/schedule
+uriPattern: talks/schedule

@@ -28,34 +28,23 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //       {
+      //           loader: MiniCssExtractPlugin.loader, 
+      //           options: {
+      //               publicPath: ''
+      //           }
+      //       },
+      //       {
+      //           loader: "css-loader"
+      //       }
+      //   ]
+      // },
       {
-        test: selectedPreprocessor.fileRegexp,
-        use: [{
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: (resourcePath, context) => {
-                // publicPath is the relative path of the resource to the context
-                // e.g. for ./css/admin/main.css the publicPath will be ../../
-                // while for ./css/main.css the publicPath will be ../
-                return path.relative(path.dirname(resourcePath), context) + '/';
-              },
-            },
-          },
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: './postcss.config.js'
-              }
-            },
-          },
-          {
-            loader: selectedPreprocessor.loaderName
-          }
-        ]
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -77,8 +66,6 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
@@ -134,8 +121,5 @@ module.exports = {
           location: 'footer'
         },
       ]),
-      // new MiniCssExtractPlugin({
-      //   filename: 'style.css',
-      // }),
   ]
 };
