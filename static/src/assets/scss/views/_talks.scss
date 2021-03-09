@@ -80,13 +80,13 @@
 	max-height: 0;
 	overflow: hidden;
 	transition: all 0.2s ease-out;
-	width: calc(100% / 4 * 2);
-	@include small-text();
+	width: 100%;
+	@include text();
 }
 .schedule-entry.active {
 	.schedule-entry-detail {
 		margin-top: 1rem;
-		margin-bottom: -1rem;
+		margin-bottom: 1rem;
 	}
 }
 

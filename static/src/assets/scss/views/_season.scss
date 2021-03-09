@@ -2,6 +2,14 @@
 	margin-top: 184px;
 }
 
+#season-header {
+	.header-main {
+		.title {
+			padding: 0 .5rem;
+		}
+	}
+}
+
 .header-main {
 	display: flex;
 	justify-content: center;
@@ -152,6 +160,9 @@
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
+			.title {
+				padding: 0;
+			}
 		}
 	}
 
