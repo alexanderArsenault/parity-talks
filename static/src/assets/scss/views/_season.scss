@@ -168,6 +168,7 @@
 	.season-entry-time {
 		padding-bottom: 0.5rem;
 	}
+
 	.season-entry-info {
 		display: flex;
 		justify-content: space-between;
@@ -175,6 +176,13 @@
 			@include small-text();
 		}
 	}
+	.season-entry-host {
+		width: calc(100%/ 6 * 4);
+		& + div {
+			width: calc(100% / 6 * 2);
+		}
+	}
+	
 	.season-entry-detail {
 		flex-wrap: wrap;
 	}
