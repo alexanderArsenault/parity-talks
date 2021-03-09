@@ -170,7 +170,21 @@ body:not(.live) {
 		background-color: $black;
 		transition: all 0.3s ease-out;
 		padding-bottom: 50px;
-
+		.nav-main-item a {
+			color: $grey;
+		}
+		.nav-main-item:hover a {
+			color: $white;
+		}
+		.active.nav-main-item a {
+			color: $white;
+		}
+		.primary.nav-main-item:hover a {
+			color: $primary;
+		}
+		.active {
+			order: -1;
+		}
 		.title {
 			color: $grey;
 			display: block;
@@ -186,9 +200,7 @@ body:not(.live) {
 		.mobile-nav-links:hover {
 			color: $primary;
 		}
-		.nav-main-item:hover a {
-			color: $primary;
-		}
+
 		.header-one {
 			h4 {
 				color: $grey;

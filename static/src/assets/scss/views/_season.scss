@@ -193,6 +193,7 @@
 	}
 	.season-entry-host {
 		width: calc(100%/ 6 * 4);
+		padding-right: 1rem;
 		& + div {
 			width: calc(100% / 6 * 2);
 		}

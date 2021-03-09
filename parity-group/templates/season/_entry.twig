@@ -63,7 +63,7 @@
 					<div>
 						<div class="season-entry-time">Time: {{event.startTime|date('H.i')}} - {{event.endTime|date('H.i')}}</div>
 						{% if event.linkToEvent %}
-							<div class="season-entry-link"><i><a href="{{event.linkToEvent}}" target="_blank">Online Link</a></i></div>
+							<div class="season-entry-link"><a href="{{event.linkToEvent}}" target="_blank">Online Link</a></div>
 						{% endif %}
 					</div>
 				</div>
