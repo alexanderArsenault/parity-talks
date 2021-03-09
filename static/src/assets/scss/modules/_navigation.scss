@@ -171,6 +171,7 @@ body:not(.live) {
 		background-color: $black;
 		transition: all 0.3s ease-out;
 		padding-bottom: 50px;
+		z-index: 10;
 		.fixed-center .title {
 			color: $white;
 		}
