@@ -1,12 +1,16 @@
+.primary .header {
+	background-color: $primary;
+}
+
 .header {
 	padding-top: 1rem;
 	display: flex;
 	flex-direction: column;
 	position: fixed;
+	background-color: $white;
 	top: 0;
 	width: 100%;
 	max-width: 100vw;
-	background-color: $primary;
 	&.group {
 		#primary-nav {
 			transition: all 0.2s ease-out;

@@ -38,11 +38,20 @@ h4 {
 	a {
 		transition: all 0.3s ease;
 		&:not(:hover){
-			color: $grey;
+			color: $darkgrey;
 		}
 	}
 }
 
+.primary {
+	h4 {
+		a {
+			&:not(:hover){
+				color: $grey;
+			}
+		}
+	}
+}
 
 a {
 	color: inherit;

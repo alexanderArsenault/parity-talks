@@ -1,5 +1,5 @@
 #season {
-	margin-top: 185px;
+	margin-top: 184px;
 }
 
 .header-main {
@@ -26,7 +26,7 @@
 	.legend {
 		padding: 0.25rem 0.5rem;
 		flex: 0;
-		@include small-text();
+		@include text();
 	}
 	.online {
 		color: $black;
@@ -34,8 +34,16 @@
 		padding-right: 1rem;
 	}
 	.offline {
-		color: $primary;
+		color: $white;
 		background-color: $black;
+	}
+}
+.online-legend {
+	align-self: flex-end;
+	padding-top: 1rem;
+	.legend {
+		text-transform: capitalize;
+		@include text();
 	}
 }
 
@@ -69,7 +77,7 @@
 .season-entry {
 	&.offline {
 		background-color: $black;
-		color: $primary;
+		color: $white;
 	}
 }
 
@@ -139,14 +147,6 @@
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
-		}
-		.online-legend {
-			align-self: flex-end;
-			padding-top: 1rem;
-			.legend {
-				text-transform: capitalize;
-				@include text();
-			}
 		}
 	}
 

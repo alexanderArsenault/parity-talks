@@ -1,0 +1,56 @@
+fieldLayouts:
+  440f110a-eaf0-45cb-8b63-4722f416387b:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 13f39eec-96ad-4437-a021-5ff1eedc1193 # Description
+            instructions: 'We currently aren''t showing this anywhere in the design - feel free to leave blank!'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 576baeeb-fb27-4af2-9410-6dd8f2cd572f # Partner Website
+            instructions: 'This is where we can add a link to our supporters website'
+            label: 'Supporter Website'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: supporters
+hasTitleField: true
+name: Supporters
+section: 5d56f32e-27e6-49e2-bb91-0155c2c5e1e2 # Supporters
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -39,8 +39,15 @@
 				<p>Supporters</p>
 			</div>
 			<div class="group-entry-body">
-				<p>{{ entry.groupSupportersList | nl2br }}</p>
-				
+				{% set supporters = craft.entries.section('supporters').all() %}
+
+				{% for entry in supporters %}
+					{% if entry.partnerWebsite %}
+						<p><a target="_blank" href="{{entry.partnerWebsite}}">{{ entry.title }}</a></p>
+					{% else %}
+						<p>{{ entry.title }}</p>
+					{% endif %}
+				{% endfor %}
 			</div>
 		</div>
 		<div class="group-entry-block">
@@ -51,7 +58,11 @@
 				{% set partners = craft.entries.section('partners').all() %}
 
 				{% for entry in partners %}
-					<p>{{ entry.title }}</p>
+					{% if entry.partnerWebsite %}
+						<p><a target="_blank" href="{{entry.partnerWebsite}}">{{ entry.title }}</a></p>
+					{% else %}
+						<p>{{ entry.title }}</p>
+					{% endif %}
 				{% endfor %}
 			</div>
 		</div>
@@ -65,14 +76,16 @@
 			</p>
 		</div>
 	</section>
+
 	<aside>
 		<div class="aside-title">
 			<p>Current members</p>
 		</div>
 		<div class="aside-body">
-				<p>{{ entry.groupCurrentMembers | nl2br }}</p>
+			<p>{{ entry.groupCurrentMembers | nl2br }}</p>
 		</div>
 	</aside>
+
 	<div class="mobile mobile-group-details">
 		<div class="group-detail">
 			<p>© 2021 Parity Group</p>

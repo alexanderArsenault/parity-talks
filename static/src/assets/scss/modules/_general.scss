@@ -10,20 +10,18 @@ html {
 //   @include fluid-type($min_width, $max_width, $min_font, $max_font);
     font-family: 'ABCMonument';
     -webkit-text-size-adjust:none;
-    background-color: $primary;
 }
 body {
+    font-family: 'ABCMonument', Arial, Helvetica, sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
+    &.primary {
+        background-color: $primary;
+    }
 }
 
 i {
     font-family: 'ABCMonumentItalic';
-}
-
-body {
-    font-family: 'ABCMonument', Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
 }
 
 .wrapper {
