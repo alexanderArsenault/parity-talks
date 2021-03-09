@@ -26,6 +26,7 @@ DESKTOP ONLY
 
 MOBILE ONLY
 - TALKS: «Info» Title should be left aligned
+>>COMPLETED
 
 - Live Button on top needs to be on every page (and clickable?)
 - Line height PARITY -> TALKS/SEASON/GROUP a bit smaller
