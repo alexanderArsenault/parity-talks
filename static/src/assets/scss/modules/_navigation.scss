@@ -170,6 +170,9 @@ body:not(.live) {
 		background-color: $black;
 		transition: all 0.3s ease-out;
 		padding-bottom: 50px;
+		.fixed-center .title {
+			color: $white;
+		}
 		.nav-main-item a {
 			color: $grey;
 		}
@@ -184,6 +187,9 @@ body:not(.live) {
 		}
 		.active {
 			order: -1;
+		}
+		.title:not(.active){
+			z-index: 1;
 		}
 		.title {
 			color: $grey;
