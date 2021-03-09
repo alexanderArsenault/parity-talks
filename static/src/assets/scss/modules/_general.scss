@@ -79,3 +79,9 @@ i {
 .no-click {
     cursor: default !important;
 }
+
+main {
+    a:hover {
+        color: $grey !important;
+    }
+}

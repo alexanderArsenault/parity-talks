@@ -34,6 +34,9 @@
 	width: 100%;
 	display: flex;
 	cursor: pointer;
+	p:hover {
+		color: $grey;
+	}
 }
 .program-entry-detail {
 	width: 50%;
@@ -75,6 +78,9 @@
 }
 .schedule-entry-body {
 	width: calc(100% / 6 * 4);
+	p:hover {
+		color: $grey;
+	}
 }
 .schedule-entry-detail {
 	max-height: 0;
@@ -111,6 +117,8 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	min-height: calc(100vh - 300px);
+	position: relative;
 	align-items: center;
 }
 #twitch-embed {
