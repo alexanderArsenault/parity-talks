@@ -51,9 +51,7 @@
 			<div class="schedule-entry-body">
 				<p>{{ schedule.title }}</p>
 				{% if schedule.description %}
-					<div class="schedule-entry-detail">	
-						{{ schedule.description}}
-					</div>
+					<div class="schedule-entry-detail">{{ schedule.description | nl2br}}</div>
 				{% endif %}
 			</div>
 	</div>

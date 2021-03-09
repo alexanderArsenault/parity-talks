@@ -103,6 +103,7 @@ let livenow = document.getElementsByClassName('live-now')
 
 Array.from(livenow).forEach( element => {
 	element.addEventListener("click", function(e) {
+		e.stopPropagation();
 		window.location.href="/talks";
 	})
 });

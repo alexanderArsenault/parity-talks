@@ -83,9 +83,6 @@ nav ul {
 	}
 }
 
-.toggle-nav {
-	cursor: pointer;
-}
 
 .header-three {
 	color: $black;
@@ -132,7 +129,7 @@ body:not(.live) {
 	.header-one {
 		.title {
 			font-size: 64px;
-			line-height: 56px;
+			line-height: 51px;
 		}
 		.header-list-right {
 			h4 {
@@ -149,76 +146,79 @@ body:not(.live) {
 	}
 
 	.header-two {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.nav-three-item {
+			@include title();
+		}
+		.header-list-right {
+			width: 100%;
+			justify-content: space-between;
+		}
+		.header-two-main {
+			order: -1;
+		}
+	}
+	#mobile-nav {
+		position: fixed;
+		display: flex;
+		min-height: 100vh;
+		width: 100%;
+		left:-110%;
+		top: 0;
+		background-color: $black;
+		transition: all 0.3s ease-out;
+		padding-bottom: 50px;
+
+		.title {
+			color: $grey;
+			display: block;
+		}
+		.header {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
-			.nav-three-item {
-				@include title();
-			}
-			.header-list-right {
-				width: 100%;
-				justify-content: space-between;
-			}
-			.header-two-main {
-				order: -1;
-			}
-		}
-		#mobile-nav {
-			position: fixed;
-			display: flex;
-			min-height: 100vh;
+			justify-content: space-between;
+			position: relative;
 			width: 100%;
-			left:-110%;
-			top: 0;
-			background-color: $black;
-			transition: all 0.3s ease-out;
-			padding-bottom: 50px;
-
-			.title {
+			background-color: transparent;
+		}
+		.mobile-nav-links:hover {
+			color: $primary;
+		}
+		.nav-main-item:hover a {
+			color: $primary;
+		}
+		.header-one {
+			h4 {
 				color: $grey;
-				display: block;
-			}
-			.header {
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				position: relative;
-				width: 100%;
-				background-color: transparent;
-			}
-			.mobile-nav-links:hover {
-				color: $primary;
-			}
-			.nav-main-item:hover a {
-				color: $primary;
-			}
-			.header-one {
-				h4 {
-					color: $grey;
-				}
-			}
-
-			#primary-nav {
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-				text-align: center;
-			}
-			.mobile-nav-links {
-				display: flex;
-				justify-content: center;
-				text-align: center;
-				flex-direction: column;
-				h4 {
-					margin-bottom: 2rem;
-				}
 			}
 		}
-		.show-mobile-nav {
-			max-height: 100vh;
-			#mobile-nav {
-				display: flex;
-				left: 0;
+
+		#primary-nav {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			text-align: center;
+		}
+		.mobile-nav-links {
+			display: flex;
+			justify-content: center;
+			text-align: center;
+			flex-direction: column;
+			h4 {
+				margin-bottom: 2rem;
 			}
 		}
 	}
+	.show-mobile-nav {
+		max-height: 100vh;
+		#mobile-nav {
+			display: flex;
+			left: 0;
+		}
+	}
+	.toggle-nav {
+		cursor: pointer;
+	}
+}

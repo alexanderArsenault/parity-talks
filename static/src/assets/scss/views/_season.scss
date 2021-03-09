@@ -113,6 +113,10 @@
 
 .season-entry-title {
 	width: calc(100% / 5 * 4);
+	overflow-x: hidden;
+	p {
+		word-break: break-word;
+	}
 }
 
 .season-entry-detail {

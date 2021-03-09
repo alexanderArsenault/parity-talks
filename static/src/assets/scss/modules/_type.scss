@@ -44,7 +44,7 @@ h4 {
 }
 
 .primary {
-	h4 {
+	h4:not(.active) {
 		a {
 			&:not(:hover){
 				color: $grey;
