@@ -15,10 +15,16 @@ body {
     font-family: 'ABCMonument', Arial, Helvetica, sans-serif;
     max-width: 100vw;
     overflow-x: hidden;
+    padding-bottom: 190px;
+    @media only screen and (max-width: $mobile) {
+        padding-bottom: 150px;
+    }
     &.primary {
         background-color: $primary;
     }
 }
+
+
 
 i {
     font-family: 'ABCMonumentItalic';
