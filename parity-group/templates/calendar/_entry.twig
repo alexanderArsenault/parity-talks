@@ -20,7 +20,7 @@
 				<ul id="primary-nav">
 					<li class="nav-main-item title"><a href="/group">Group</a></li>
 					<li class="nav-main-item title"><a href="/talks">Talks</a></li>
-					<li class="nav-main-item title active"><a href="/season">Season</a></li>
+					<li class="nav-main-item title active"><a href="/calendar">Calendar</a></li>
 
 				</ul>
 			</nav>
@@ -29,8 +29,8 @@
 	<div id="season-header" class="header-two fixed-center">
 		<div class="header-left"></div>
 		<div class="header-main">
-				<h2 class="title active"><a href="/season/year">Year</a></h2>
-				<h2 class="title"><a href="/season">Month</a></h2>
+				<h2 class="title"><a href="/season/year">Year</a></h2>
+				<h2 class="title active"><a href="/season">Month</a></h2>
 		</div>
 		<div class="online-legend">
 			<div class="legend online">online</div>
@@ -41,11 +41,12 @@
 
 <!-- Header Two Season -->
 
-<main id="season" class="year">
-	{% set entries = craft.entries.section('season').orderBy('startTime asc').all() %}
+<main id="season" class="month">
+	{% set month = 'now'|date('F') %}
+	{% set entries = craft.entries.section('calendar').orderBy('startTime asc').all() %}
 	{% for event in entries %}
 	<div class="season-entry {% if event.onlineOrOffline == 'offline' %} offline{% endif %}">
-		<div class="season-entry-date"><p>{{ event.startTime|date('d.m.') }}{{ event.startTime|date('yy') }}</p></div>
+		<div class="season-entry-date">{{ event.startTime|date('d.m.') }}<br>{{ event.startTime|date('yy') }}</div>
 		<div class="season-entry-description">
 			<h4>{{event.eventSubtitle}}</h4>
 			<div class="season-entry-title">

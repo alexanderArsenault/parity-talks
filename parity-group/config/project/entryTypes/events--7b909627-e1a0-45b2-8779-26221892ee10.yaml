@@ -94,7 +94,7 @@ fieldLayouts:
 handle: events
 hasTitleField: true
 name: Events
-section: 9386ce07-ee4b-4661-ae65-70beb33ed42f # Season
+section: 9386ce07-ee4b-4661-ae65-70beb33ed42f # Calendar
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
