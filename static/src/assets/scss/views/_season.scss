@@ -58,7 +58,7 @@
 		}
 		.season-entry-description {
 			> h4 {
-				display: block
+				display: block;
 			}
 		}
 	}
@@ -68,7 +68,7 @@
 	&.year {
 		.season-entry-description {
 			> h4 {
-				display: none;
+				@include text();
 			}
 		}
 	}
@@ -129,6 +129,11 @@
 
 	.season-entry {
 		flex-direction: column;
+	}
+	.season-entry-date {
+		br {
+			display: none;
+		}
 	}
 	.month {
 		.season-entry-date,

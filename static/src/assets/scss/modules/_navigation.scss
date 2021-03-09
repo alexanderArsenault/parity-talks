@@ -99,15 +99,19 @@ nav ul {
 	.live-now-container {
 		color: $black;
 		padding-left: 1rem;
+		position: relative;
+		.live-now {
+			position: absolute;
+			top:0;
+		}
 	}
 }
 
-.header:not(.live){
+body:not(.live) {
 	.live-now {
 		display: none;
 	}
 }
-
 
 @media only screen and (max-width: $desktop) {
 	.header.talks {

@@ -38,7 +38,7 @@ h4 {
 	a {
 		transition: all 0.3s ease;
 		&:not(:hover){
-			color: $darkgrey;
+			color: $grey;
 		}
 	}
 }
@@ -63,6 +63,7 @@ a {
 @mixin text {
 	font-size: 22px;
 	line-height: 28px;
+	text-transform: none;
 	@media only screen and (max-width: $mobile) {
 		font-size: 20px;
 	}

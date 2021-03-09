@@ -41,7 +41,7 @@
 
 <!-- Header Two Season -->
 
-<main id="season">
+<main id="season" class="year">
 	{% set entries = craft.entries.section('season').orderBy('startTime asc').all() %}
 	{% for event in entries %}
 	<div class="season-entry {% if event.onlineOrOffline == 'offline' %} offline{% endif %}">

@@ -1,0 +1,13 @@
+contentColumnType: boolean
+fieldGroup: 666fbfde-e19f-4f92-adb9-c57409e9f194 # Talks
+handle: liveSwitch
+instructions: 'Toggle this to ''Live'' when the stream is live'
+name: 'Live Switch'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Off'
+  onLabel: Live
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

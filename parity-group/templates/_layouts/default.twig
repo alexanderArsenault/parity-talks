@@ -14,8 +14,9 @@
     <link rel="mask-icon" href="../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
 </head>
-<body class="{% if craft.request.getSegment(1) == 'talks' %} primary {% endif %}">
-      {% block content %}
+{% set live = craft.entries.section('talks').one().liveSwitch %}
+<body class="{% if craft.request.getSegment(1) == 'talks' %}primary{% endif %}{% if live == true %} live{% endif %}">
+			{% block content %}
       {% endblock %}
 </div>
 </body>

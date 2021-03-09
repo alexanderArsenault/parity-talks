@@ -144,7 +144,10 @@
 
 // schedule
 @media only screen and (max-width: $mobile) {
-
+	.header.talks .header-list-right {
+		padding-left: 0;
+	}
+	
 	#schedule, .title-header:not(.group), #stream {
 	margin-top: 230px;
 	}
@@ -163,5 +166,8 @@
 
 	.schedule-entry {
 		flex-wrap: wrap;
+	}
+	.title-header:not(.group) {
+		text-align: left;
 	}
 }

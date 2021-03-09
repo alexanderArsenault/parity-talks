@@ -36,21 +36,21 @@
 	</div>
 </div>
 
-
-
-
 <!-- Accordions -->
 <!-- Header Three Talks Content-->
 <div id="stream">
-	<div id="twitch-embed"></div>
+	<div data-streamname="{{ entry.twitchStreamName }}" id="twitch-embed"></div>
 </div>
 
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
 <script type="text/javascript">
+	var streamname = document.querySelector('#twitch-embed');
+	streamname = streamname.dataset.streamname
+
 	new Twitch.Embed("twitch-embed", {
 		width: '100%',
 		height: '600px',
-		channel: "cats",
+		channel: streamname,
 		// only needed if your site is also embedded on embed.example.com and othersite.example.com 
 		// parent: ["embed.example.com", "othersite.example.com"]
 	});
