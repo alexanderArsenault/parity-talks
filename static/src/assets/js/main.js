@@ -98,3 +98,11 @@ Array.from(closebuttons).forEach( element => {
 		body.classList.toggle('show-mobile-nav');
 	})
 });
+
+let livenow = document.getElementsByClassName('live-now')
+
+Array.from(livenow).forEach( element => {
+	element.addEventListener("click", function(e) {
+		window.location.href="/talks";
+	})
+});
