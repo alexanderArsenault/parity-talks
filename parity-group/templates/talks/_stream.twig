@@ -25,17 +25,10 @@
 			</nav>
 		</div>
 	</div>
-{% set streaming = craft.entries.section('talks').one().liveSwitch %}
-
 	<!-- Header Two Talks -->
 	<div class="header-two fixed-center">
-		{% if streaming %}
-			<div class="header-two-left title active"><a href="/talks/stream">10.03.2021</a><div class="live-now-container"><span class="live-now mobile-hide">Live</span></div></div>
-			<div class="header-two-main title"><a href="/">What's Good</a></div>
-		{% else %}
-			<div class="header-two-left title"><a href="/talks/stream">10.03.2021</a><div class="live-now-container"><span class="live-now mobile-hide">Live</span></div></div>
-			<div class="header-two-main title active"><a href="/">What's Good</a></div>
-		{% endif %}
+	<div class="header-two-left title active"><a href="/talks/stream">10.03.2021</a><div class="live-now-container"><span class="live-now mobile-hide">Live</span></div></div>
+		<div class="header-two-main title"><a href="/">What's Good</a></div>
 		<div class="header-list-right">
 			<h4 class="nav-three-item"><a href="/talks/info">Info</a></h4>
 			<h4 class="nav-three-item"><a href="/talks/schedule">Schedule</a></h4>
@@ -43,10 +36,8 @@
 	</div>
 </div>
 
-{% if streaming %}
 <div id="stream">
 	<iframe src="https://vimeo.com/event/315582/embed/2c9bd50702" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:calc(100% - 2rem);height:100%;"></iframe></div>
 </div>
-{% endif %}
 
 {% endblock %}

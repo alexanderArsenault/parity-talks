@@ -7,5 +7,5 @@ siteSettings:
     enabledByDefault: true
     hasUrls: true
     template: talks/_entry
-    uriFormat: talks
+    uriFormat: __home__
 type: single
