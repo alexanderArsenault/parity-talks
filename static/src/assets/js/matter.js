@@ -1,151 +1,263 @@
-class SplashGraphic {
-  constructor(options) {
-    this.options = {
-      element: document.getElementById('world'),
-      airFriction: 0.03, // air friction of bodies 
-    };
 
-    this.resizeDelay = 400;
+//MATTER JS
 
-    // throttling variables and timeouts
-    this.resizeTimeout = null;
+// module aliases
+var Engine = Matter.Engine,
+    Render = Matter.Render,
+    World = Matter.World,
+    Bodies = Matter.Bodies,
+		MouseConstraint = Matter.MouseConstraint,
+		Mouse = Matter.Mouse;
 
-    // Matter.js objects
-    this.engine = null;
-    this.render = null;
-    this.runner = null;
+// create an engine
+  var engine = Engine.create(),
+        world = engine.world;
 
-    this.setSize();
-    this.initScene();
-    this.initEvents();
-  }
 
-  setSize() {
-    this.viewportWidth = document.documentElement.clientWidth;
-    this.viewportHeight = document.documentElement.clientHeight;
-  }
-
-  initScene() {
-    // engine
-    this.engine = Matter.Engine.create(); // handles the physics
-    this.engine.world.gravity.y = 0.1;
-
-    // world
-    this.world = this.engine.world; // stores the bodies
-
-    // render
-    this.render = Matter.Render.create({
-      canvas: this.options.element,
-      engine: this.engine,
-      options: {
-        width: 560,
-        height: 800, 
-        background: 'transparent',
-        wireframes: false,
-        showAngleIndicator: false,
-      },
+// create renderer
+   var render = Render.create({
+        element: document.body,
+        engine: engine,
+        options: {
+            width: 600,
+            height: 850,
+            background: 'whitesmoke',
+            showAngleIndicator: false,
+            wireframes: false
+        }
     });
-    Matter.Render.run(this.render);
 
-    // runner 
-    this.runner = Matter.Runner.create();
-    Matter.Runner.run(this.runner, this.engine);
 
-    this.initSvg();
-    this.initWall();
-  }
 
-  random(range) {
-    const [min, max] = range;
-    return Math.random() * (max - min) + min;
-  }
+//sol
+var ground = Bodies.rectangle(1000, 850, 2000,1, { isStatic: true });
 
-  rectangle(x, y, width, height) {
-    return Matter.Bodies.rectangle(x, y, width, height, {
-      isStatic: true,
-      render: {
-        visible: false,
-      },
-    });
-  }
+//murs
+var murdroit = Bodies.rectangle(0,0,1,1600, { isStatic: true } );
 
-  initSvg() {
-    const el = document.getElementById('svg');
-    const paths = el.querySelectorAll('path');
-		console.log(paths);
-    for (let i = 0; i < paths.length; i++) {
-      const path = paths[i];
-      const vertexSets = [];
+var murgauche = Bodies.rectangle(600,0,1,1600, { isStatic: true });
 
-      const points = Matter.Svg.pathToVertices(path, 3);
-      vertexSets.push(Matter.Vertices.scale(points, 1.2, 1.2));
+//obstacle
+//var ground2 = Bodies.trapezoid(100, 400, 30, 120, 20, { isStatic: true });
 
-      Matter.World.add(this.engine.world, Matter.Bodies.fromVertices(100 + i * 100, 200 + i * 50, vertexSets, {
-        render: {
-          fillStyle: '#fff',
-          strokeStyle: '#fff',
-          lineWidth: 1,
-          airFriction: this.options.airFriction
-        },
-      }, true));
-    }
-  }
 
-  initWall() {
-    Matter.World.add(this.engine.world, [
-      this.rectangle(280, 40, 560, 20), // top
-      this.rectangle(280, 760, 560, 20), // bottom
-      this.rectangle(40, 400, 20, 800), // left
-      this.rectangle(520, 400, 20, 800), // right
-    ]);
-  }
+//image 1 jaune
+var t = Bodies.circle(200, -200, 90, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.4,
+                friction: 0.1,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/cfdc0eadf39b8279386f49c337516959/tumblr_prvajkVevC1v8evnjo3_400.png'
+                    }
+                }
+            });
 
-  initEvents() {
-    this.addEventListeners();
-    this.dragNDrop();
-  }
 
-  dragNDrop() {
-    this.mouseConstraint = Matter.MouseConstraint.create(this.engine, {
-      element: this.options.element,
-      constraint: {
-        render: {
-          visible: false,
-        },
-        stiffness: 0.6,
-      },
-    });
-    Matter.World.add(this.world, this.mouseConstraint);
+//image 2 bleu
+var r = Bodies.circle(400, -400, 90, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.4,
+                friction: 0.1,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/ef6b9a5e3f7fd2598d005ea574e12ee6/tumblr_prvajkVevC1v8evnjo1_250.png'
+                    }
+                }
+            });
 
-    this.mouseConstraint.mouse.element.removeEventListener('mousewheel', this.mouseConstraint.mouse.mousewheel);
-    this.mouseConstraint.mouse.element.removeEventListener('DOMMouseScroll', this.mouseConstraint.mouse.mousewheel);
-  }
+//image 3 marron
+var a = Bodies.circle(300, -600, 90, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.5,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/d30cc35c3e5be96909666aedfab99f9d/tumblr_prvajkVevC1v8evnjo4_250.png'
+                    }
+                }
+            });
 
-  shutdown() {
-    Matter.Engine.clear(this.engine);
-    Matter.Render.stop(this.render);
-    Matter.Runner.stop(this.runner);
-    this.removeEventListeners();
-  }
 
-  addEventListeners() {
-    window.addEventListener('resize', this.onResizeThrottled.bind(this));
-  }
+//image 4
+var n = Bodies.rectangle(200, -900, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/a00bbaa27e4d420a429bf8403423d3f3/tumblr_prvajkVevC1v8evnjo5_400.png'
+                    }
+                }
+            });
 
-  removeEventListeners() {
-    window.removeEventListener('resize', this.onResizeThrottled);
-  }
+//image 5
+var s = Bodies.rectangle(400, -1200, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/f70b1a815aa108394673525d9b3c2961/tumblr_prvajkVevC1v8evnjo6_250.png'
+                    }
+                }
+            });
 
-  onResizeThrottled() {
-    if (!this.resizeTimeout) {
-      this.resizeTimeout = setTimeout(this.onResize.bind(this), this.resizeDelay);
-    }
-  }
 
-  onResize() {
-    this.shutdown();
-    this.initScene();
-  }
-}
+//image 5
+var g = Bodies.rectangle(300, -1500, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/d8eb92d228e3dbaaed1d661afafe895d/tumblr_prvajkVevC1v8evnjo2_400.png'
+                    }
+                }
+            });
 
-export let SplashGraphic;
+//image 5
+var r1 = Bodies.rectangle(200, -1800, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/ef6b9a5e3f7fd2598d005ea574e12ee6/tumblr_prvajkVevC1v8evnjo1_250.png'
+                    }
+                }
+            });
+
+
+//image 5
+var e = Bodies.rectangle(400, -2100, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/0ff09b5ccc68e767e346ea158725ebd6/tumblr_prvaobCUHo1v8evnjo1_250.png'
+                    }
+                }
+            });
+
+
+
+//image 5
+var s1 = Bodies.rectangle(300, -2300, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/f70b1a815aa108394673525d9b3c2961/tumblr_prvajkVevC1v8evnjo6_250.png'
+                    }
+                }
+            });
+
+
+
+
+//image 5
+var s2 = Bodies.rectangle(200, -2500, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/f70b1a815aa108394673525d9b3c2961/tumblr_prvajkVevC1v8evnjo6_250.png'
+                    }
+                }
+            });
+
+
+
+//image 5
+var i = Bodies.rectangle(400, -2800, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/f6b1234fd6611bc36679fed942dc8ece/tumblr_prvakfU3lL1v8evnjo1_250.png'
+                    }
+                }
+            });
+
+
+
+//image 5
+var o = Bodies.rectangle(300, -3100, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/5052b810048f840bca7ac55cdda3c122/tumblr_prvakfU3lL1v8evnjo2_400.png'
+                    }
+                }
+            });
+
+
+
+
+//image 5
+var n1 = Bodies.rectangle(200, -3500, 90, 140, {
+                density: 0.0005,
+                frictionAir: 0.01,
+                restitution: 0.3,
+                friction: 0.01,
+                render: {
+                    sprite: {
+                        texture: 'https://66.media.tumblr.com/a00bbaa27e4d420a429bf8403423d3f3/tumblr_prvajkVevC1v8evnjo5_400.png'
+                    }
+                }
+            });
+
+
+
+
+// add all of the bodies to the world
+World.add(engine.world, [murdroit, murgauche, ground,  t, r, a, n, s, g, r1, e, s1, s2, i, o, n1]);
+
+
+// run the engine
+Engine.run(engine);
+
+// run the renderer
+Render.run(render);
+
+
+
+
+
+
+// add mouse control
+var mouse = Mouse.create(render.canvas),
+        mouseConstraint = MouseConstraint.create(engine, {
+            mouse: mouse,
+            constraint: {
+                stiffness: 0.2,
+                render: {
+                    visible: false
+                }
+            }
+        });
+
+
+World.add(world, mouseConstraint);
+
+// keep the mouse in sync with rendering
+render.mouse = mouse;

@@ -48,7 +48,7 @@
 	{% set entries = craft.entries.section('calendar').orderBy('startTime asc').all() %}
 	{% for event in entries %}
 
-		{% if (event.startTime > firstDayOfMonth and event.startTime < lastDayOfMonth|date_modify("+1 day") )%}
+		{% if (event.startTime > firstDayOfMonth and event.startTime < lastDayOfMonth|date_modify("+1 day") and event.startTime > date() )%}
 			<div class="season-entry {% if event.onlineOrOffline == 'offline' %} offline{% endif %}">
 				<div class="season-entry-date">{{ event.startTime|date('d.m.') }}<br>{{ event.startTime|date('yy') }}</div>
 				<div class="season-entry-description">

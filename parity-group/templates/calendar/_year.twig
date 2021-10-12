@@ -42,9 +42,10 @@
 <!-- Header Two Season -->
 
 <main id="season" class="year">
-	{% set now = "now"|date() %}
 	{% set entries = craft.entries.section('calendar').orderBy('startTime asc').all()%}
 	{% for event in entries %}
+		{% if event.startTime > date() %}
+		
 			<div class="season-entry {% if event.onlineOrOffline == 'offline' %} offline{% endif %}">
 				<div class="season-entry-date"><p>{{ event.startTime|date('d.m.') }}{{ event.startTime|date('yy') }}</p></div>
 				<div class="season-entry-description">
@@ -70,6 +71,7 @@
 					</div>
 				</div>
 			</div>
+			{% endif %}
 	{% endfor %}
 </main>
 
