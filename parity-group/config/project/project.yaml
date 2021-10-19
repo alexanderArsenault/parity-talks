@@ -1,4 +1,4 @@
-dateModified: 1615308319
+dateModified: 1634645361
 email:
   fromEmail: rsenaultc@gmail.com
   fromName: parity-group
@@ -8,6 +8,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  twigpack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true
