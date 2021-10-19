@@ -1,6 +1,0 @@
-siteUid: null
-sortOrder: 4
-template: /group/_entry.twig
-uriParts:
-  - group
-uriPattern: group

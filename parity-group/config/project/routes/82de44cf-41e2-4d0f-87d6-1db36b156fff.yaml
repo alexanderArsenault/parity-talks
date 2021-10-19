@@ -1,6 +1,0 @@
-siteUid: null
-sortOrder: 7
-template: /talks/_stream.twig
-uriParts:
-  - talks/stream
-uriPattern: talks/stream

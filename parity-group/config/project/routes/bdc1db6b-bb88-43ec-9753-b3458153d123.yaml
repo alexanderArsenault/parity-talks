@@ -1,6 +1,0 @@
-siteUid: null
-sortOrder: 6
-template: /calendar/_year.twig
-uriParts:
-  - calendar/year
-uriPattern: calendar/year
